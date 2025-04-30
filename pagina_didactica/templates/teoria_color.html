@@ -1,16 +1,254 @@
 {% extends "base.html" %}
-{% block title %}Teoría del Color{% endblock %}
+{% block title %}Teoría del Color - Aventura Colorida{% endblock %}
 
 {% block content %}
-  <!-- ... (mantén todo el contenido anterior hasta la sección del juego) ... -->
+  <div class="topic-header color-header">
+    <div class="rainbow-border">
+      <h1>🎨 La Aventura de los Colores 🎨</h1>
+      <p class="subtitle">¡Sumérgete en un mundo mágico donde los colores cobran vida!</p>
+    </div>
+  </div>
 
-    <section class="game-section">
-      <div class="container">
-        <h2 class="section-title">¡Juego de Memoria: Colores y Emociones! 🎮</h2>
-        <p class="section-description">Encuentra las parejas de colores y las emociones que representan. ¡Pon a prueba tu memoria y aprende al mismo tiempo!</p>
+  <div class="topic-content">
+    <section class="info-section color-intro-section">
+      <div class="section-content">
+        <div class="text-content">
+          <h2>¿Qué es la Teoría del Color?</h2>
+          <p>La teoría del color es como descubrir los secretos de un arcoíris. Los colores tienen superpoderes: pueden cambiar cómo nos sentimos, enviar mensajes especiales y guiar nuestra mirada hacia lo más importante.</p>
+        </div>
+        <div class="color-wheel-container floating-element">
+          <div class="spinning-wheel">
+            <img src="https://cdn.prod.website-files.com/65e7297194523c404b923b44/66798bffa73408984095e919_uv0qad5nk5.gif" alt="Rueda de colores" class="color-wheel">
+          </div>
+          <p class="color-caption">La rueda mágica de colores muestra cómo todos los colores son amigos y se relacionan entre sí.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-section color-families-section">
+      <h2 class="color-section-title">Las Familias de Colores</h2>
+      
+      <div class="color-types">
+        <div class="color-type primary-colors">
+          <div class="color-card-header">
+            <h3>Colores Primarios</h3>
+            <p class="color-subtitle">¡Los superhéroes de los colores!</p>
+          </div>
+          <div class="color-samples">
+            <div class="color-sample-container">
+              <div class="color-sample bouncing" style="background-color: #FF0000;">
+                <span>Rojo</span>
+              </div>
+              <div class="color-description">¡Fuerte y valiente!</div>
+            </div>
+            <div class="color-sample-container">
+              <div class="color-sample bouncing" style="background-color: #0000FF;">
+                <span>Azul</span>
+              </div>
+              <div class="color-description">¡Tranquilo y profundo!</div>
+            </div>
+            <div class="color-sample-container">
+              <div class="color-sample bouncing" style="background-color: #FFFF00;">
+                <span>Amarillo</span>
+              </div>
+              <div class="color-description">¡Brillante y alegre!</div>
+            </div>
+          </div>
+          <p class="color-explanation">Estos colores son especiales porque no pueden crearse mezclando otros colores. ¡Son los originales!</p>
+        </div>
         
-        <div class="memory-game-container">
-          <div class="memory-stats">
+        <div class="color-type secondary-colors">
+          <div class="color-card-header">
+            <h3>Colores Secundarios</h3>
+            <p class="color-subtitle">¡Nacidos de la magia de mezclar!</p>
+          </div>
+          <div class="color-samples with-arrows">
+            <div class="color-mix">
+              <div class="color-dot" style="background-color: #FF0000;"></div>
+              <div class="plus-sign">+</div>
+              <div class="color-dot" style="background-color: #FFFF00;"></div>
+              <div class="equals-sign">=</div>
+              <div class="color-sample-container">
+                <div class="color-sample" style="background-color: #FFA500;">
+                  <span>Naranja</span>
+                </div>
+              </div>
+            </div>
+            <div class="color-mix">
+              <div class="color-dot" style="background-color: #0000FF;"></div>
+              <div class="plus-sign">+</div>
+              <div class="color-dot" style="background-color: #FFFF00;"></div>
+              <div class="equals-sign">=</div>
+              <div class="color-sample-container">
+                <div class="color-sample" style="background-color: #008000;">
+                  <span>Verde</span>
+                </div>
+              </div>
+            </div>
+            <div class="color-mix">
+              <div class="color-dot" style="background-color: #FF0000;"></div>
+              <div class="plus-sign">+</div>
+              <div class="color-dot" style="background-color: #0000FF;"></div>
+              <div class="equals-sign">=</div>
+              <div class="color-sample-container">
+                <div class="color-sample" style="background-color: #800080;">
+                  <span>Morado</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="color-explanation">¡Cuando dos colores primarios se hacen amigos y se mezclan, crean estos colores mágicos!</p>
+        </div>
+        
+        <div class="color-type tertiary-colors">
+          <div class="color-card-header">
+            <h3>Colores Terciarios</h3>
+            <p class="color-subtitle">¡La familia extendida de colores!</p>
+          </div>
+          <div class="color-samples tertiary-samples">
+            <div class="color-sample-container">
+              <div class="color-sample" style="background-color: #FF4500;">
+                <span>Rojo-Naranja</span>
+              </div>
+            </div>
+            <div class="color-sample-container">
+              <div class="color-sample" style="background-color: #9ACD32;">
+                <span>Amarillo-Verde</span>
+              </div>
+            </div>
+            <div class="color-sample-container">
+              <div class="color-sample" style="background-color: #4B0082;">
+                <span>Azul-Morado</span>
+              </div>
+            </div>
+          </div>
+          <p class="color-explanation">Cuando un color primario y un secundario se encuentran, ¡ocurre más magia y tenemos aún más colores!</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-section color-psychology-section">
+      <h2 class="color-section-title">¿Cómo nos hacen sentir los colores?</h2>
+      <p class="section-intro">¡Los colores son como magos que pueden cambiar cómo nos sentimos! Aquí está el poder secreto de cada uno:</p>
+      
+      <div class="color-psychology">
+        <div class="color-emotion">
+          <div class="color-circle pulse" style="background-color: #FF0000;"></div>
+          <div class="emotion-info">
+            <h4>Rojo</h4>
+            <p>Te da energía y fuerza como un superhéroe</p>
+            <div class="emotion-icon">🔥</div>
+          </div>
+        </div>
+        
+        <div class="color-emotion">
+          <div class="color-circle pulse" style="background-color: #0000FF;"></div>
+          <div class="emotion-info">
+            <h4>Azul</h4>
+            <p>Te calma como el agua tranquila del mar</p>
+            <div class="emotion-icon">🌊</div>
+          </div>
+        </div>
+        
+        <div class="color-emotion">
+          <div class="color-circle pulse" style="background-color: #FFFF00;"></div>
+          <div class="emotion-info">
+            <h4>Amarillo</h4>
+            <p>Te hace sentir feliz como un día soleado</p>
+            <div class="emotion-icon">☀️</div>
+          </div>
+        </div>
+        
+        <div class="color-emotion">
+          <div class="color-circle pulse" style="background-color: #008000;"></div>
+          <div class="emotion-info">
+            <h4>Verde</h4>
+            <p>Te conecta con la naturaleza y las plantas</p>
+            <div class="emotion-icon">🌿</div>
+          </div>
+        </div>
+        
+        <div class="color-emotion">
+          <div class="color-circle pulse" style="background-color: #FFA500;"></div>
+          <div class="emotion-info">
+            <h4>Naranja</h4>
+            <p>Te llena de creatividad y diversión</p>
+            <div class="emotion-icon">🎨</div>
+          </div>
+        </div>
+        
+        <div class="color-emotion">
+          <div class="color-circle pulse" style="background-color: #800080;"></div>
+          <div class="emotion-info">
+            <h4>Morado</h4>
+            <p>Te hace sentir especial y mágico</p>
+            <div class="emotion-icon">✨</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="kids-section">
+    <div class="container">
+      <div class="cloud-container">
+        <div class="cloud cloud1"></div>
+        <div class="cloud cloud2"></div>
+        <h2 class="section-title rainbow-text">Teoría del Color para Pequeños Artistas 🎨</h2>
+      </div>
+      <div class="kids-content">
+        <div class="kids-text bouncing-container">
+          <p class="kids-explanation">
+            ¡Hola amiguitos! ¿Sabían que los colores son como magia? Imaginen un mundo sin colores... ¡sería muy aburrido! 
+            Los colores vienen de la luz del sol, que es como un arcoíris escondido. Tenemos tres colores principales: 
+            <span style="color: #FF0000; font-weight: bold;" class="highlight-text">rojo</span>, 
+            <span style="color: #0000FF; font-weight: bold;" class="highlight-text">azul</span> y 
+            <span style="color: #FFFF00; font-weight: bold;" class="highlight-text">amarillo</span>. 
+            ¡Estos son los colores primarios! Cuando mezclamos estos colores, ¡creamos colores nuevos! Por ejemplo, 
+            rojo + amarillo = <span style="color: #FFA500; font-weight: bold;" class="highlight-text">naranja</span>, 
+            azul + amarillo = <span style="color: #008000; font-weight: bold;" class="highlight-text">verde</span>, y 
+            rojo + azul = <span style="color: #800080; font-weight: bold;" class="highlight-text">morado</span>. 
+            ¡Los colores también nos hacen sentir emociones! El rojo puede hacernos sentir energía, el azul calma, y el amarillo alegría. 
+            ¡Prueben a mezclar colores con pinturas o crayones y descubran qué nuevos colores y emociones pueden crear!
+          </p>
+        </div>
+        <div class="kids-illustration">
+          <div class="color-mixing-animation">
+            <div class="paint-palette">
+              <div class="paint-dot" style="background-color: #FF0000;"></div>
+              <div class="paint-dot" style="background-color: #0000FF;"></div>
+              <div class="paint-dot" style="background-color: #FFFF00;"></div>
+              <div class="paint-dot" style="background-color: #008000;"></div>
+              <div class="paint-dot" style="background-color: #800080;"></div>
+              <div class="paint-dot" style="background-color: #FFA500;"></div>
+            </div>
+            <div class="paintbrush" style="transform: scale(0.7);"></div>
+            <img src="https://www.imagui.com/i/gifs-psicodelicos-taringa-29717338.gif" 
+                 alt="Colores psicodélicos" 
+                 class="kids-image"
+                 style="width: 380px; height: auto;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="game-section">
+    <div class="container">
+      <div class="star-container">
+        <div class="star star1"></div>
+        <div class="star star2"></div>
+        <div class="star star3"></div>
+        <h2 class="section-title">¡Juego de Memoria: Colores y Emociones! 🎮</h2>
+      </div>
+      <p class="section-description">Encuentra las parejas de colores y las emociones que representan. ¡Pon a prueba tu memoria y aprende al mismo tiempo!</p>
+      
+      <div class="memory-game-container">
+        <div class="memory-stats">
+          <button id="start-game" class="game-button">
+            <i class="fas fa-play"></i> Iniciar Juego
+          </button>
+          <div id="game-controls" style="display: none; width: 100%; justify-content: space-between; align-items: center;">
             <div class="memory-stat">
               <i class="fas fa-sync-alt"></i> Intentos: <span id="attempts">0</span>
             </div>
@@ -24,26 +262,594 @@
               <i class="fas fa-redo"></i> Reiniciar
             </button>
           </div>
-          
-          <div class="memory-board" id="memory-board">
-            <!-- Las cartas se generarán automáticamente -->
-          </div>
-          
-          <div class="game-complete" id="game-complete" style="display: none;">
-            <h3>¡Felicidades! 🎉</h3>
-            <p>Has completado el juego en <span id="final-time">00:00</span> con <span id="final-attempts">0</span> intentos.</p>
-            <button id="play-again" class="game-button">
-              <i class="fas fa-redo"></i> Jugar de nuevo
-            </button>
-          </div>
+        </div>
+        
+        <div class="memory-board" id="memory-board">
+          <!-- Las cartas se generarán automáticamente -->
+        </div>
+        
+        <div class="game-complete" id="game-complete" style="display: none;">
+          <h3>¡Felicidades! 🎉</h3>
+          <p>Has completado el juego en <span id="final-time">00:00</span> con <span id="final-attempts">0</span> intentos.</p>
+          <button id="play-again" class="game-button">
+            <i class="fas fa-redo"></i> Jugar de nuevo
+          </button>
         </div>
       </div>
-    </section>
-
-  <!-- ... (mantén el resto del contenido) ... -->
+    </div>
+  </section>
 
   <style>
+    /* Estilos generales mejorados */
+    body {
+      font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', sans-serif;
+      background-color: #f9f7ff;
+      color: #333;
+    }
+    
+    .topic-header {
+      background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 50%, #a1c4fd 100%);
+      padding: 2rem 0;
+      text-align: center;
+      border-radius: 0 0 30px 30px;
+      margin-bottom: 3rem;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .rainbow-border {
+      background: white;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .rainbow-border::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
+      z-index: -1;
+      border-radius: 25px;
+      animation: rainbow-border 6s linear infinite;
+    }
+    
+    @keyframes rainbow-border {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    
+    .topic-header h1 {
+      font-size: 3rem;
+      margin: 0 0 1rem 0;
+      color: #333;
+      text-shadow: 2px 2px 0px rgba(255,255,255,0.8);
+    }
+    
+    .subtitle {
+      font-size: 1.5rem;
+      color: #555;
+      margin: 0;
+    }
+    
+    .topic-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    
+    .info-section {
+      background-color: white;
+      border-radius: 20px;
+      padding: 2.5rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .info-section::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 10px;
+      background: linear-gradient(90deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb, #ffecd2);
+      border-radius: 0 0 20px 20px;
+    }
+    
+    .info-section:hover {
+      transform: translateY(-5px);
+    }
+    
+    .section-content {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+    
+    .text-content {
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    h2 {
+      font-size: 2.5rem;
+      color: #5a9bff;
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: inline-block;
+    }
+    
+    h2::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #ff9a9e, #fad0c4, #a1c4fd);
+      border-radius: 3px;
+    }
+    
+    .info-section p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #555;
+    }
+    
+    /* Estilos para la rueda de colores */
+    .color-wheel-container {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .spinning-wheel {
+      position: relative;
+      animation: float 6s ease-in-out infinite;
+      margin-bottom: 1.5rem;
+    }
+    
+    @keyframes float {
+      0% {
+        transform: translateY(0px) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-20px) rotate(5deg);
+      }
+      100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+    }
+    
+    .color-wheel {
+      max-width: 300px;
+      border-radius: 50%;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      transition: transform 0.5s;
+    }
+    
+    .color-wheel:hover {
+      transform: rotate(45deg);
+    }
+    
+    .color-caption {
+      text-align: center;
+      font-style: italic;
+      color: #666;
+      background-color: #f8f9fa;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      max-width: 300px;
+    }
+    
+    /* Estilos para las familias de colores */
+    .color-section-title {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    
+    .color-types {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+    }
+    
+    .color-type {
+      background-color: white;
+      border-radius: 20px;
+      padding: 0;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+    
+    .color-type:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+    
+    .color-card-header {
+      padding: 1.5rem;
+      text-align: center;
+      background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+    }
+    
+    .secondary-colors .color-card-header {
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    }
+    
+    .tertiary-colors .color-card-header {
+      background: linear-gradient(135deg, #ffecd2, #fcb69f);
+    }
+    
+    .color-card-header h3 {
+      margin: 0 0 0.5rem 0;
+      color: white;
+      font-size: 1.8rem;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    }
+    
+    .color-subtitle {
+      color: white;
+      margin: 0;
+      font-style: italic;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    }
+    
+    .color-samples {
+      display: flex;
+      justify-content: space-around;
+      padding: 2rem 1rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    
+    .color-sample-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .color-description {
+      font-size: 0.9rem;
+      color: #666;
+      text-align: center;
+    }
+    
+    .color-sample {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-weight: bold;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    
+    .color-sample span {
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    
+    .color-sample:hover {
+      transform: scale(1.1);
+    }
+    
+    .color-sample:hover span {
+      opacity: 1;
+    }
+    
+    /* Animación de rebote para los colores primarios */
+    .bouncing {
+      animation: bounce 2s infinite alternate;
+    }
+    
+    @keyframes bounce {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-10px);
+      }
+    }
+    
+    /* Estilos para la mezcla de colores */
+    .with-arrows {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    .color-mix {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+    
+    .color-dot {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .plus-sign, .equals-sign {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #666;
+    }
+    
+    .color-explanation {
+      padding: 1.5rem;
+      text-align: center;
+      background-color: #f8f9fa;
+      margin: 0;
+      font-style: italic;
+      border-top: 1px dashed #ddd;
+    }
+    
+    /* Estilos para la psicología del color */
+    .section-intro {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 2.5rem;
+      font-size: 1.3rem;
+      line-height: 1.6;
+      color: #555;
+    }
+    
+    .color-psychology {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    
+    .color-emotion {
+      background-color: white;
+      border-radius: 15px;
+      padding: 1.5rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .color-emotion::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background-color: var(--color);
+    }
+    
+    .color-emotion:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .color-circle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Animación de pulso para los círculos de color */
+    .pulse {
+      animation: pulse 3s infinite;
+    }
+    
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+    }
+    
+    .emotion-info {
+      flex: 1;
+    }
+    
+    .emotion-info h4 {
+      color: #333;
+      margin: 0 0 0.5rem 0;
+      font-size: 1.5rem;
+    }
+    
+    .emotion-info p {
+      margin: 0;
+      color: #666;
+      font-size: 1rem;
+    }
+    
+    .emotion-icon {
+      font-size: 2rem;
+      margin-top: 1rem;
+    }
+    
+    /* Estilos para la sección de niños */
+    .kids-section {
+      background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+      padding: 4rem 0;
+      border-radius: 30px;
+      margin: 3rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cloud-container {
+      position: relative;
+      height: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .cloud {
+      position: absolute;
+      background-color: white;
+      border-radius: 100px;
+      width: 120px;
+      height: 60px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .cloud:before, .cloud:after {
+      content: '';
+      position: absolute;
+      background-color: white;
+      border-radius: 50%;
+    }
+    
+    .cloud:before {
+      width: 80px;
+      height: 80px;
+      top: -30px;
+      left: 20px;
+    }
+    
+    .cloud:after {
+      width: 60px;
+      height: 60px;
+      top: -20px;
+      right: 20px;
+    }
+    
+    .cloud1 {
+      left: 10%;
+      animation: cloud-move 25s linear infinite;
+    }
+    
+    .cloud2 {
+      right: 10%;
+      animation: cloud-move 30s linear infinite reverse;
+    }
+    
+    @keyframes cloud-move {
+      0% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(100px);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+    
+    .rainbow-text {
+      background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+      -webkit-background-clip: text;
+      color: transparent;
+      position: relative;
+      z-index: 10;
+      font-size: 2.5rem;
+      text-shadow: none;
+      margin-bottom: 2rem;
+    }
+    
+    .kids-content {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+    
+    @media (max-width: 768px) {
+      .kids-content {
+        flex-direction: column;
+      }
+    }
+    
+    .kids-text {
+      flex: 1;
+    }
+    
+    .kids-explanation {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      border-left: 5px solid #5a9bff;
+    }
+    
+    .kids-illustration {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+    
+    .kids-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
     /* Estilos para el juego de memoria */
+    .game-section {
+      background-color: #f0f8ff;
+      padding: 3rem 0;
+      border-radius: 20px;
+      margin: 2rem 0;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+    
+    .section-description {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      color: #666;
+    }
+    
     .memory-game-container {
       margin: 2rem auto;
       max-width: 800px;
@@ -217,12 +1023,18 @@
         attempts: 0,
         pairsFound: 0,
         timer: null,
-        seconds: 0
+        seconds: 0,
+        isGameActive: false  // Nueva propiedad para controlar si el juego está activo
       };
       
-      // Inicializar el juego
-      function initGame() {
-        clearInterval(gameState.timer);
+      // Inicializar el juego sin comenzar el temporizador
+      function setupGame() {
+        // Detener el temporizador anterior si existe
+        if (gameState.timer) {
+          clearInterval(gameState.timer);
+        }
+        
+        // Reiniciar el estado del juego pero mantenerlo inactivo
         gameState = {
           hasFlippedCard: false,
           lockBoard: false,
@@ -231,9 +1043,11 @@
           attempts: 0,
           pairsFound: 0,
           timer: null,
-          seconds: 0
+          seconds: 0,
+          isGameActive: false // El juego se configura pero no está activo
         };
         
+        // Actualizar la interfaz
         document.getElementById('attempts').textContent = '0';
         document.getElementById('pairs').textContent = '0';
         document.getElementById('time').textContent = '00:00';
@@ -241,7 +1055,20 @@
         document.getElementById('memory-board').style.display = 'grid';
         
         createMemoryBoard();
+        
+        // Mostrar botón de inicio
+        document.getElementById('start-game').style.display = 'block';
+        document.getElementById('game-controls').style.display = 'none';
+      }
+      
+      // Iniciar el juego (activar el temporizador)
+      function startGame() {
+        gameState.isGameActive = true;
         startTimer();
+        
+        // Ocultar botón de inicio y mostrar controles
+        document.getElementById('start-game').style.display = 'none';
+        document.getElementById('game-controls').style.display = 'flex';
       }
       
       // Crear el tablero de juego
@@ -294,27 +1121,32 @@
           
           cardElement.appendChild(cardFront);
           cardElement.appendChild(cardBack);
+          
           cardElement.addEventListener('click', flipCard);
           memoryBoard.appendChild(cardElement);
         });
       }
       
-      // Voltear una carta
+      // Voltear carta - Ahora también inicia el juego al primer clic
       function flipCard() {
+        // Si el juego no está activo, iniciar al primer clic
+        if (!gameState.isGameActive) {
+          startGame();
+        }
+        
         if (gameState.lockBoard) return;
         if (this === gameState.firstCard) return;
-        if (this.classList.contains('matched')) return;
         
         this.classList.add('flipped');
         
         if (!gameState.hasFlippedCard) {
-          // Primer clic
+          // Primera carta volteada
           gameState.hasFlippedCard = true;
           gameState.firstCard = this;
           return;
         }
         
-        // Segundo clic
+        // Segunda carta volteada
         gameState.secondCard = this;
         gameState.attempts++;
         document.getElementById('attempts').textContent = gameState.attempts;
@@ -322,7 +1154,7 @@
         checkForMatch();
       }
       
-      // Comprobar si las cartas coinciden
+      // Verificar si hay coincidencia
       function checkForMatch() {
         const isMatch = gameState.firstCard.dataset.pairId === gameState.secondCard.dataset.pairId;
         
@@ -372,13 +1204,19 @@
       
       // Iniciar temporizador
       function startTimer() {
-        clearInterval(gameState.timer);
+        // Asegurarse de que no haya un temporizador activo
+        if (gameState.timer) {
+          clearInterval(gameState.timer);
+        }
+        
         gameState.seconds = 0;
         updateTimerDisplay();
         
         gameState.timer = setInterval(() => {
-          gameState.seconds++;
-          updateTimerDisplay();
+          if (gameState.isGameActive) {
+            gameState.seconds++;
+            updateTimerDisplay();
+          }
         }, 1000);
       }
       
@@ -392,6 +1230,8 @@
       
       // Finalizar el juego
       function endGame() {
+        // Detener el temporizador y marcar el juego como inactivo
+        gameState.isGameActive = false;
         clearInterval(gameState.timer);
         
         // Mostrar resultados finales
@@ -405,11 +1245,12 @@
       }
       
       // Event listeners
-      document.getElementById('reset-game').addEventListener('click', initGame);
-      document.getElementById('play-again').addEventListener('click', initGame);
+      document.getElementById('reset-game').addEventListener('click', setupGame);
+      document.getElementById('play-again').addEventListener('click', setupGame);
+      document.getElementById('start-game').addEventListener('click', startGame);
       
-      // Iniciar el juego al cargar la página
-      initGame();
+      // Configurar el juego al cargar la página, pero no iniciarlo
+      setupGame();
     });
   </script>
 {% endblock %}

@@ -20,58 +20,185 @@ main {
     padding: 2rem 0;
 }
 
-/* Header and navigation */
-header {
+/* Header and navigation - UPDATED */
+.main-header {
     background-color: #4a6fa5;
     color: white;
-    padding: 1rem 0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    position: relative;
+    padding: 0.5rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
+.navbar {
+    padding: 0.5rem 0;
 }
 
-/* Logo styling */
 .logo-image {
-    max-height: 50px;
+    max-height: 40px;
     width: auto;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
 }
 
-.logo a {
+.logo:hover .logo-image {
+    transform: scale(1.05);
+}
+
+.logo-text {
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: white;
+    letter-spacing: 0.5px;
+}
+
+.navbar-brand {
     display: flex;
     align-items: center;
+    text-decoration: none;
 }
 
 .nav-links {
-    display: flex;
-    list-style: none;
-    align-items: center;
+    margin-left: auto;
 }
 
-.nav-links li {
-    margin-left: 1.5rem;
+.nav-item {
+    margin: 0 5px;
     position: relative;
 }
 
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: all 0.3s;
-    padding: 0.5rem 1rem;
+.nav-link {
+    color: white !important;
+    font-size: 1.05rem;
+    padding: 0.6rem 1rem !important;
     border-radius: 20px;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
-.nav-links a:hover {
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 5px;
+    left: 50%;
+    background-color: white;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 70%;
+}
+
+.auth-button {
+    font-weight: bold;
+    padding: 0.5rem 1.2rem !important;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.login-btn {
+    background-color: #ffd166 !important;
+    color: #333 !important;
+}
+
+.login-btn:hover {
+    background-color: #ffc233 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.register-btn {
+    background-color: #06d6a0 !important;
+    color: white !important;
+}
+
+.register-btn:hover {
+    background-color: #05b386 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.user-dropdown .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 0.5rem 1rem !important;
+}
+
+.user-dropdown .nav-link:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
+
+.user-dropdown .dropdown-menu {
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: none;
+    padding: 0.5rem;
+    min-width: 200px;
+}
+
+.user-dropdown .dropdown-item {
+    border-radius: 8px;
+    padding: 0.7rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.user-dropdown .dropdown-item:hover {
+    background-color: #f8f9fa;
+    transform: translateX(5px);
+}
+
+.navbar-toggler {
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background-color: #4a6fa5;
+        border-radius: 0 0 15px 15px;
+        padding: 1rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        margin-top: 0.5rem;
+    }
+    
+    .nav-item {
+        margin: 5px 0;
+    }
+    
+    .auth-button {
+        margin-top: 10px;
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+    }
+}
+
 
 .login-btn, .register-btn {
     background-color: #ffd166;

@@ -2,925 +2,526 @@
 {% block title %}Leyes de Gestalt{% endblock %}
 
 {% block content %}
-  <div class="topic-header gestalt-header">
-    <h2>👁️ Leyes de Gestalt 👁️</h2>
-    <p>¡Descubre cómo nuestro cerebro organiza lo que vemos!</p>
-  </div>
-
-  <div class="topic-content">
-    <section class="info-section">
-      <h3>¿Qué son las Leyes de Gestalt?</h3>
-      <p>Las Leyes de Gestalt son como reglas que explican cómo nuestro cerebro agrupa y organiza las cosas que vemos. Estas reglas nos ayudan a diseñar interfaces que sean fáciles de entender para todos.</p>
+  <div class="container">
+    <!-- Decoraciones -->
+    <div class="decoration deco-1">👁️</div>
+    <div class="decoration deco-2">🎨</div>
+    <div class="decoration deco-3">🧩</div>
+    <div class="decoration deco-4">🔍</div>
+    
+    <!-- Encabezado -->
+    <header class="header">
+      <h1>¡Las Leyes de Gestalt!</h1>
+      <p>¡Descubre cómo tu cerebro organiza lo que ves!</p>
+    </header>
+    
+    <!-- Introducción -->
+    <section class="section">
+      <h2>¿Qué son las Leyes de Gestalt?</h2>
+      <p>Las Leyes de Gestalt son como <strong>reglas mágicas</strong> que explican cómo nuestro cerebro organiza las cosas que vemos. Nuestro cerebro no ve cada cosa por separado, ¡sino que agrupa todo para entender mejor!</p>
       
-      <div class="gestalt-intro">
-        <img src="{{ url_for('static', filename='images/gestalt_intro.png') }}" alt="Ejemplo de Gestalt" class="gestalt-image">
-        <p>Nuestro cerebro ve patrones y grupos, no solo elementos individuales.</p>
-      </div>
-    </section>
-
-    <section class="info-section">
-      <h3>Ley de Proximidad</h3>
-      <div class="gestalt-example">
-        <div class="gestalt-demo proximity-demo">
-          <div class="dot"></div><div class="dot"></div><div class="dot"></div>
-          <div class="dot"></div><div class="dot"></div><div class="dot"></div>
-          
-          <div class="spacer"></div>
-          
-          <div class="dot"></div><div class="dot"></div><div class="dot"></div>
-          <div class="dot"></div><div class="dot"></div><div class="dot"></div>
-        </div>
-        <div class="gestalt-explanation">
-          <p>Los elementos que están cerca entre sí se perciben como un grupo.</p>
-          <p>En programación, colocamos juntos los botones o elementos que tienen funciones relacionadas.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="info-section">
-      <h3>Ley de Similitud</h3>
-      <div class="gestalt-example">
-        <div class="gestalt-demo similarity-demo">
-          <div class="square"></div><div class="circle"></div><div class="square"></div>
-          <div class="circle"></div><div class="square"></div><div class="circle"></div>
-          <div class="square"></div><div class="circle"></div><div class="square"></div>
-        </div>
-        <div class="gestalt-explanation">
-          <p>Los elementos que se parecen se perciben como parte del mismo grupo.</p>
-          <p>En programación, usamos colores y formas similares para elementos que tienen la misma función.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="info-section">
-      <h3>Ley de Cierre</h3>
-      <div class="gestalt-example">
-        <div class="gestalt-demo closure-demo">
-          <div class="incomplete-circle"></div>
-          <div class="incomplete-square"></div>
-          <div class="incomplete-triangle"></div>
-        </div>
-        <div class="gestalt-explanation">
-          <p>Nuestro cerebro completa las formas incompletas.</p>
-          <p>En programación, podemos usar formas incompletas y el usuario aún entenderá lo que son.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="info-section">
-      <h3>Ley de Continuidad</h3>
-      <div class="gestalt-example">
-        <div class="gestalt-demo continuity-demo">
-          <svg width="300" height="100">
-            <path d="M10,50 Q75,10 150,50 T290,50" stroke="blue" fill="transparent" stroke-width="3"/>
-            <path d="M10,50 Q75,90 150,50 T290,50" stroke="red" fill="transparent" stroke-width="3"/>
-          </svg>
-        </div>
-        <div class="gestalt-explanation">
-          <p>Nuestro cerebro sigue líneas y curvas de manera natural.</p>
-          <p>En programación, usamos líneas y flechas para guiar al usuario a través de la interfaz.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="info-section">
-      <h3>Ley de Figura y Fondo</h3>
-      <div class="gestalt-example">
-        <div class="gestalt-demo figure-ground-demo">
-          <img src="{{ url_for('static', filename='images/figure_ground.png') }}" alt="Figura y fondo" class="gestalt-image">
-        </div>
-        <div class="gestalt-explanation">
-          <p>Nuestro cerebro distingue entre un objeto principal (figura) y su entorno (fondo).</p>
-          <p>En programación, usamos contraste y espacio para destacar elementos importantes.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="interactive-section">
-      <h3>¡Juega con Gestalt!</h3>
-      <div class="gestalt-interactive">
-        <div class="interactive-container">
-          <div class="gestalt-playground" id="gestalt-playground">
-            <!-- Los elementos se agregarán con JavaScript -->
-          </div>
-          <div class="interactive-controls">
-            <button id="proximity-btn">Proximidad</button>
-            <button id="similarity-btn">Similitud</button>
-            <button id="closure-btn">Cierre</button>
-            <button id="continuity-btn">Continuidad</button>
-            <button id="figure-ground-btn">Figura y Fondo</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Nueva sección: Actividades interactivas -->
-    <section class="activities-section">
-      <h3>🎮 Actividades Interactivas</h3>
-      
-      <!-- Actividad 1: Adivina la Ley -->
-      <div class="activity-card">
-        <h4>🧩 Adivina la Ley</h4>
-        <div class="activity-content">
-          <div class="guess-law-game">
-            <div class="game-image-container">
-              <img id="guess-law-image" src="{{ url_for('static', filename='images/gestalt_proximity.png') }}" alt="Adivina la ley" class="game-image">
-            </div>
-            <p>¿Qué ley de Gestalt se aplica en esta imagen?</p>
-            <div class="game-options">
-              <button class="game-option" data-law="continuidad">A. Continuidad</button>
-              <button class="game-option" data-law="proximidad">B. Proximidad</button>
-              <button class="game-option" data-law="cierre">C. Cierre</button>
-            </div>
-            <p id="guess-law-feedback" class="game-feedback"></p>
-            <button id="next-image" class="next-btn" style="display: none;">Siguiente imagen</button>
-          </div>
-        </div>
+      <div class="intro-image-container">
+        <img src="https://heyjaime.com/wp-content/uploads/2022/10/teoria-de-la-gestalt-psicologia-percepcion-visual-01.png" alt="Ejemplo de Gestalt" class="intro-image">
       </div>
       
-      <!-- Actividad 2: Dibuja con Gestalt -->
-      <div class="activity-card">
-        <h4>🎨 Dibuja con Gestalt</h4>
-        <div class="activity-content">
-          <div class="draw-gestalt-game">
-            <p>Arrastra y coloca elementos para crear un patrón que represente una ley de Gestalt:</p>
-            <div class="drawing-tools">
-              <button class="tool-btn" data-shape="dot">Punto</button>
-              <button class="tool-btn" data-shape="square">Cuadrado</button>
-              <button class="tool-btn" data-shape="circle">Círculo</button>
-              <button class="tool-btn" data-shape="line">Línea</button>
-            </div>
-            <div class="drawing-canvas" id="drawing-canvas">
-              <!-- Los elementos se agregarán con JavaScript -->
-            </div>
-            <div class="drawing-controls">
-              <button id="clear-canvas">Borrar todo</button>
-              <div class="law-selector">
-                <label for="law-select">¿Qué ley estás representando?</label>
-                <select id="law-select">
-                  <option value="">Selecciona una ley...</option>
-                  <option value="proximidad">Proximidad</option>
-                  <option value="similitud">Similitud</option>
-                  <option value="cierre">Cierre</option>
-                  <option value="continuidad">Continuidad</option>
-                  <option value="figura-fondo">Figura y Fondo</option>
-                </select>
+      <p>Estas leyes nos ayudan a:</p>
+      <ul style="font-size: 1.2rem; margin-left: 30px; margin-bottom: 20px;">
+        <li>Entender cómo vemos el mundo</li>
+        <li>Crear dibujos e imágenes que se entiendan fácil</li>
+        <li>Diseñar juegos y páginas web divertidas</li>
+        <li>¡Y mucho más!</li>
+      </ul>
+    </section>
+    
+    <!-- Leyes principales -->
+    <section class="section">
+      <h2>Las 5 Leyes Principales</h2>
+      
+      <!-- Ley de Proximidad -->
+      <div class="law-box">
+        <div class="law-title">1. Ley de Proximidad</div>
+        <div class="law-content">
+          <div class="law-demo">
+            <div class="proximity-demo">
+              <div class="dot-group">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+              </div>
+              <div class="dot-group">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      
-      <!-- Actividad 3: Encuentra la figura oculta -->
-      <div class="activity-card">
-        <h4>👁️ Encuentra la figura oculta</h4>
-        <div class="activity-content">
-          <div class="hidden-figure-game">
-            <p>¿Puedes encontrar la figura oculta en esta imagen? ¡Haz clic cuando la veas!</p>
-            <div class="figure-container">
-              <img id="hidden-figure" src="{{ url_for('static', filename='images/hidden_figure.png') }}" alt="Figura oculta" class="hidden-figure-image">
-              <div id="figure-highlight" class="figure-highlight"></div>
-            </div>
-            <button id="reveal-figure" class="reveal-btn">Revelar figura</button>
-            <p id="hidden-figure-feedback" class="game-feedback"></p>
+          <div class="law-explanation">
+            <p>Las cosas que están <strong>cerca entre sí</strong> parecen formar un grupo.</p>
+            <p>¡Es como cuando tus amigos se sientan juntos en clase! Tu cerebro piensa que pertenecen al mismo equipo.</p>
           </div>
         </div>
       </div>
       
-      <!-- Actividad 4: Completa el dibujo -->
-      <div class="activity-card">
-        <h4>🧠 Completa el dibujo</h4>
-        <div class="activity-content">
-          <div class="complete-drawing-game">
-            <p>Nuestro cerebro puede completar formas automáticamente. ¡Dibuja las líneas que faltan!</p>
-            <div class="incomplete-drawing-container">
-              <canvas id="drawing-canvas-completion" width="400" height="300"></canvas>
+      <!-- Ley de Similitud -->
+      <div class="law-box">
+        <div class="law-title">2. Ley de Similitud</div>
+        <div class="law-content">
+          <div class="law-demo">
+            <div class="similarity-demo">
+              <div class="square"></div><div class="circle"></div><div class="square"></div>
+              <div class="circle"></div><div class="square"></div><div class="circle"></div>
+              <div class="square"></div><div class="circle"></div><div class="square"></div>
             </div>
-            <div class="drawing-controls">
-              <button id="check-completion">Comprobar</button>
-              <button id="next-incomplete">Siguiente dibujo</button>
-            </div>
-            <p id="completion-feedback" class="game-feedback"></p>
+          </div>
+          <div class="law-explanation">
+            <p>Las cosas que se <strong>parecen</strong> parecen formar un grupo.</p>
+            <p>¡Como cuando ves muchos lápices rojos y azules! Tu cerebro agrupa automáticamente los del mismo color.</p>
           </div>
         </div>
       </div>
       
-      <!-- Actividad 5: Conecta los puntos -->
-      <div class="activity-card">
-        <h4>🧵 Conecta los puntos</h4>
-        <div class="activity-content">
-          <div class="connect-dots-game">
-            <p>Sigue la ley de continuidad para conectar los puntos en el orden correcto.</p>
-            <div class="dots-container">
-              <canvas id="dots-canvas" width="400" height="300"></canvas>
+      <!-- Ley de Cierre -->
+      <div class="law-box">
+        <div class="law-title">3. Ley de Cierre</div>
+        <div class="law-content">
+          <div class="law-demo">
+            <div class="closure-demo">
+              <div class="incomplete-circle"></div>
+              <div class="incomplete-square"></div>
+              <div class="incomplete-triangle"></div>
             </div>
-            <div class="dots-controls">
-              <button id="check-dots">Comprobar</button>
-              <button id="reset-dots">Reiniciar</button>
-            </div>
-            <p id="dots-feedback" class="game-feedback"></p>
+          </div>
+          <div class="law-explanation">
+            <p>Tu cerebro <strong>completa las figuras incompletas</strong>.</p>
+            <p>¡Es como adivinar la palabra cuando faltan letras! Tu cerebro puede ver un círculo aunque no esté completo.</p>
           </div>
         </div>
       </div>
       
-      <!-- Actividad 6: Clasifica por semejanza -->
-      <div class="activity-card">
-        <h4>💡 Clasifica por semejanza</h4>
-        <div class="activity-content">
-          <div class="classify-game">
-            <p>Arrastra y agrupa los elementos similares (por color, forma o tamaño).</p>
-            <div class="classification-container">
-              <div id="elements-container" class="elements-container">
-                <!-- Los elementos se agregarán con JavaScript -->
-              </div>
-              <div id="drop-zones" class="drop-zones">
-                <div class="drop-zone" data-group="1"></div>
-                <div class="drop-zone" data-group="2"></div>
-                <div class="drop-zone" data-group="3"></div>
-              </div>
+      <!-- Ley de Continuidad -->
+      <div class="law-box">
+        <div class="law-title">4. Ley de Continuidad</div>
+        <div class="law-content">
+          <div class="law-demo">
+            <div class="continuity-demo">
+              <svg width="200" height="100" viewBox="0 0 200 100">
+                <path d="M10,50 Q75,10 100,50 T190,50" stroke="#ff6b6b" fill="transparent" stroke-width="4"/>
+                <path d="M10,50 Q75,90 100,50 T190,50" stroke="#5a67d8" fill="transparent" stroke-width="4"/>
+              </svg>
             </div>
-            <div class="classification-controls">
-              <button id="check-classification">Comprobar</button>
-              <button id="reset-classification">Reiniciar</button>
-            </div>
-            <p id="classification-feedback" class="game-feedback"></p>
+          </div>
+          <div class="law-explanation">
+            <p>Tu cerebro sigue <strong>líneas y curvas de manera natural</strong>.</p>
+            <p>¡Como cuando sigues un camino! Tu vista naturalmente continúa a lo largo de una línea.</p>
           </div>
         </div>
       </div>
       
-      <!-- Actividad 7: Memorama de leyes -->
-      <div class="activity-card">
-        <h4>🔤 Memorama de leyes</h4>
-        <div class="activity-content">
-          <div class="memory-game">
-            <p>Encuentra las parejas: imagen y nombre de la ley correspondiente.</p>
-            <div class="memory-board" id="memory-board">
-              <!-- Las cartas se agregarán con JavaScript -->
-            </div>
-            <div class="memory-stats">
-              <p>Intentos: <span id="memory-attempts">0</span></p>
-              <p>Parejas encontradas: <span id="memory-matches">0</span>/6</p>
-            </div>
-            <button id="reset-memory" class="reset-btn">Reiniciar juego</button>
+      <!-- Ley de Figura y Fondo -->
+      <div class="law-box">
+        <div class="law-title">5. Ley de Figura y Fondo</div>
+        <div class="law-content">
+          <div class="law-demo">
+            <div class="figure-ground-demo"></div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="quiz-section">
-      <h3>¡Pon a prueba tus conocimientos!</h3>
-      <div class="quiz-container">
-        <div class="quiz-question">
-          <p>¿Qué ley de Gestalt explica por qué vemos un círculo aunque esté incompleto?</p>
-          <div class="quiz-options">
-            <button class="quiz-option" data-correct="false">Ley de Proximidad</button>
-            <button class="quiz-option" data-correct="false">Ley de Similitud</button>
-            <button class="quiz-option" data-correct="true">Ley de Cierre</button>
-            <button class="quiz-option" data-correct="false">Ley de Continuidad</button>
+          <div class="law-explanation">
+            <p>Tu cerebro distingue entre un <strong>objeto principal</strong> (figura) y su <strong>entorno</strong> (fondo).</p>
+            <p>¡Como cuando ves una estrella en el cielo! Puedes ver la estrella (figura) separada del cielo (fondo).</p>
           </div>
-          <p class="quiz-feedback"></p>
         </div>
       </div>
     </section>
   </div>
-
-  <script>
-    // Interactive Gestalt playground
-    const playground = document.getElementById('gestalt-playground');
-    const proximityBtn = document.getElementById('proximity-btn');
-    const similarityBtn = document.getElementById('similarity-btn');
-    const closureBtn = document.getElementById('closure-btn');
-    const continuityBtn = document.getElementById('continuity-btn');
-    const figureGroundBtn = document.getElementById('figure-ground-btn');
-
-    // Proximity demonstration
-    proximityBtn.addEventListener('click', function() {
-      playground.innerHTML = '';
-      playground.className = 'gestalt-playground proximity-playground';
-      
-      for (let i = 0; i < 20; i++) {
-        const dot = document.createElement('div');
-        dot.className = 'playground-dot';
-        playground.appendChild(dot);
-      }
-    });
-
-    // Similarity demonstration
-    similarityBtn.addEventListener('click', function() {
-      playground.innerHTML = '';
-      playground.className = 'gestalt-playground similarity-playground';
-      
-      for (let i = 0; i < 16; i++) {
-        const shape = document.createElement('div');
-        shape.className = i % 2 === 0 ? 'playground-square' : 'playground-circle';
-        playground.appendChild(shape);
-      }
-    });
-
-    // Closure demonstration
-    closureBtn.addEventListener('click', function() {
-      playground.innerHTML = '';
-      playground.className = 'gestalt-playground closure-playground';
-      
-      const shapes = ['incomplete-circle-large', 'incomplete-square-large', 'incomplete-triangle-large'];
-      
-      for (let i = 0; i < shapes.length; i++) {
-        const shape = document.createElement('div');
-        shape.className = shapes[i];
-        playground.appendChild(shape);
-      }
-    });
-
-    // Continuity demonstration
-    continuityBtn.addEventListener('click', function() {
-      playground.innerHTML = '';
-      playground.className = 'gestalt-playground continuity-playground';
-      
-      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-      svg.setAttribute('width', '100%');
-      svg.setAttribute('height', '100%');
-      svg.setAttribute('viewBox', '0 0 300 150');
-      
-      const path1 = document.createElementNS("http://www.w3.org/2000/svg", "path");
-      path1.setAttribute('d', 'M10,75 Q75,25 150,75 T290,75');
-      path1.setAttribute('stroke', '#FF5722');
-      path1.setAttribute('fill', 'transparent');
-      path1.setAttribute('stroke-width', '4');
-      
-      const path2 = document.createElementNS("http://www.w3.org/2000/svg", "path");
-      path2.setAttribute('d', 'M10,75 Q75,125 150,75 T290,75');
-      path2.setAttribute('stroke', '#2196F3');
-      path2.setAttribute('fill', 'transparent');
-      path2.setAttribute('stroke-width', '4');
-      
-      svg.appendChild(path1);
-      svg.appendChild(path2);
-      playground.appendChild(svg);
-    });
-
-    // Figure-ground demonstration
-    figureGroundBtn.addEventListener('click', function() {
-      playground.innerHTML = '';
-      playground.className = 'gestalt-playground figure-ground-playground';
-      
-      const img = document.createElement('img');
-      img.src = "{{ url_for('static', filename='images/figure_ground_interactive.png') }}";
-      img.alt = "Figura y fondo interactivo";
-      img.className = "figure-ground-interactive";
-      playground.appendChild(img);
-    });
-
-    // Initialize with proximity example
-    proximityBtn.click();
-
-    // Quiz functionality
-    const quizOptions = document.querySelectorAll('.quiz-option');
-    const quizFeedback = document.querySelector('.quiz-feedback');
-
-    quizOptions.forEach(option => {
-      option.addEventListener('click', function() {
-        quizOptions.forEach(btn => btn.disabled = true);
-        
-        if (this.dataset.correct === 'true') {
-          this.classList.add('correct');
-          quizFeedback.textContent = '¡Correcto! ¡Muy bien!';
-          quizFeedback.style.color = '#4CAF50';
-        } else {
-          this.classList.add('incorrect');
-          quizFeedback.textContent = 'Incorrecto. Intenta de nuevo.';
-          quizFeedback.style.color = '#F44336';
-          
-          // Highlight the correct answer
-          quizOptions.forEach(btn => {
-            if (btn.dataset.correct === 'true') {
-              btn.classList.add('correct');
-            }
-          });
-        }
-      });
-    });
-
-    // Adivina la Ley game
-    const guessLawImage = document.getElementById('guess-law-image');
-    const guessLawOptions = document.querySelectorAll('.guess-law-game .game-option');
-    const guessLawFeedback = document.getElementById('guess-law-feedback');
-    const nextImageBtn = document.getElementById('next-image');
-
-    // Imágenes para el juego
-    const lawImages = [
-      {
-        src: "{{ url_for('static', filename='images/gestalt_proximity.png') }}",
-        law: "proximidad"
-      },
-      {
-        src: "{{ url_for('static', filename='images/gestalt_similarity.png') }}",
-        law: "similitud"
-      },
-      {
-        src: "{{ url_for('static', filename='images/gestalt_closure.png') }}",
-        law: "cierre"
-      },
-      {
-        src: "{{ url_for('static', filename='images/gestalt_continuity.png') }}",
-        law: "continuidad"
-      },
-      {
-        src: "{{ url_for('static', filename='images/gestalt_figure_ground.png') }}",
-        law: "figura-fondo"
-      }
-    ];
-
-    let currentImageIndex = 0;
-
-    // Función para cargar la siguiente imagen
-    function loadNextImage() {
-      if (currentImageIndex >= lawImages.length) {
-        currentImageIndex = 0;
-      }
-      
-      guessLawImage.src = lawImages[currentImageIndex].src;
-      guessLawFeedback.textContent = '';
-      guessLawFeedback.style.color = '';
-      nextImageBtn.style.display = 'none';
-      
-      guessLawOptions.forEach(option => {
-        option.disabled = false;
-        option.classList.remove('correct', 'incorrect');
-      });
-    }
-
-    // Event listeners para las opciones
-    guessLawOptions.forEach(option => {
-      option.addEventListener('click', function() {
-        guessLawOptions.forEach(btn => btn.disabled = true);
-        
-        if (this.dataset.law === lawImages[currentImageIndex].law) {
-          this.classList.add('correct');
-          guessLawFeedback.textContent = '¡Correcto! ✅';
-          guessLawFeedback.style.color = '#4CAF50';
-        } else {
-          this.classList.add('incorrect');
-          guessLawFeedback.textContent = 'Incorrecto. ❌ La respuesta correcta es: ' + 
-            lawImages[currentImageIndex].law.charAt(0).toUpperCase() + 
-            lawImages[currentImageIndex].law.slice(1);
-          guessLawFeedback.style.color = '#F44336';
-          
-          // Highlight the correct answer
-          guessLawOptions.forEach(btn => {
-            if (btn.dataset.law === lawImages[currentImageIndex].law) {
-              btn.classList.add('correct');
-            }
-          });
-        }
-        
-        nextImageBtn.style.display = 'block';
-      });
-    });
-
-    // Event listener para el botón de siguiente imagen
-    nextImageBtn.addEventListener('click', function() {
-      currentImageIndex++;
-      loadNextImage();
-    });
-
-    // Dibuja con Gestalt
-    const drawingCanvas = document.getElementById('drawing-canvas');
-    const toolButtons = document.querySelectorAll('.tool-btn');
-    const clearCanvasBtn = document.getElementById('clear-canvas');
-    let currentTool = null;
-
-    // Event listeners para las herramientas
-    toolButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        toolButtons.forEach(btn => btn.classList.remove('active'));
-        this.classList.add('active');
-        currentTool = this.dataset.shape;
-      });
-    });
-
-    // Event listener para el canvas
-    drawingCanvas.addEventListener('click', function(e) {
-      if (!currentTool) return;
-      
-      const rect = drawingCanvas.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      
-      const element = document.createElement('div');
-      element.className = `drawing-element ${currentTool}-element`;
-      element.style.left = `${x}px`;
-      element.style.top = `${y}px`;
-      
-      drawingCanvas.appendChild(element);
-    });
-
-    // Event listener para borrar el canvas
-    clearCanvasBtn.addEventListener('click', function() {
-      drawingCanvas.innerHTML = '';
-    });
-
-    // Encuentra la figura oculta
-    const hiddenFigure = document.getElementById('hidden-figure');
-    const figureHighlight = document.getElementById('figure-highlight');
-    const revealFigureBtn = document.getElementById('reveal-figure');
-    const hiddenFigureFeedback = document.getElementById('hidden-figure-feedback');
-
-    // Event listener para revelar la figura
-    revealFigureBtn.addEventListener('click', function() {
-      figureHighlight.style.display = 'block';
-      hiddenFigureFeedback.textContent = '¡Has encontrado la figura! Esta es una aplicación de la ley de Figura y Fondo.';
-      hiddenFigureFeedback.style.color = '#4CAF50';
-    });
-
-    // Completa el dibujo
-    const completionCanvas = document.getElementById('drawing-canvas-completion');
-    const ctx = completionCanvas.getContext('2d');
-    const checkCompletionBtn = document.getElementById('check-completion');
-    const nextIncompleteBtn = document.getElementById('next-incomplete');
-    const completionFeedback = document.getElementById('completion-feedback');
-    
-    let isDrawing = false;
-    let lastX = 0;
-    let lastY = 0;
-    
-    // Dibujos incompletos
-    const incompleteDrawings = [
-      {
-        draw: function() {
-          ctx.clearRect(0, 0, completionCanvas.width, completionCanvas.height);
-          ctx.beginPath();
-          ctx.moveTo(100, 100);
-          ctx.lineTo(300, 100);
-          ctx.lineTo(300, 200);
-          ctx.stroke();
-        },
-        solution: [
-          [100, 100],
-          [100, 200],
-          [300, 200]
-        ]
-      },
-      {
-        draw: function() {
-          ctx.clearRect(0, 0, completionCanvas.width, completionCanvas.height);
-          ctx.beginPath();
-          ctx.arc(200, 150, 50, 0, Math.PI, false);
-          ctx.stroke();
-        },
-        solution: [
-          [200, 150],
-          [200, 200]
-        ]
-      }
-    ];
-    
-    let currentDrawingIndex = 0;
-    
-    // Función para cargar el siguiente dibujo incompleto
-    function loadNextIncompleteDrawing() {
-      if (currentDrawingIndex >= incompleteDrawings.length) {
-        currentDrawingIndex = 0;
-      }
-      
-      incompleteDrawings[currentDrawingIndex].draw();
-      completionFeedback.textContent = '';
+  
+  <style>
+    /* ESTILOS GENERALES */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
     }
     
-    // Event listeners para el canvas de dibujo
-    completionCanvas.addEventListener('mousedown', function(e) {
-      isDrawing = true;
-      const rect = completionCanvas.getBoundingClientRect();
-      lastX = e.clientX - rect.left;
-      lastY = e.clientY - rect.top;
-    });
-    
-    completionCanvas.addEventListener('mousemove', function(e) {
-      if (!isDrawing) return;
-      
-      const rect = completionCanvas.getBoundingClientRect();
-      const currentX = e.clientX - rect.left;
-      const currentY = e.clientY - rect.top;
-      
-      ctx.beginPath();
-      ctx.moveTo(lastX, lastY);
-      ctx.lineTo(currentX, currentY);
-      ctx.stroke();
-      
-      lastX = currentX;
-      lastY = currentY;
-    });
-    
-    completionCanvas.addEventListener('mouseup', function() {
-      isDrawing = false;
-    });
-    
-    completionCanvas.addEventListener('mouseout', function() {
-      isDrawing = false;
-    });
-    
-    // Event listener para comprobar el dibujo
-    checkCompletionBtn.addEventListener('click', function() {
-      completionFeedback.textContent = '¡Buen trabajo! Has completado el dibujo aplicando la ley de cierre.';
-      completionFeedback.style.color = '#4CAF50';
-    });
-    
-    // Event listener para el siguiente dibujo
-    nextIncompleteBtn.addEventListener('click', function() {
-      currentDrawingIndex++;
-      loadNextIncompleteDrawing();
-    });
-    
-    // Inicializar el primer dibujo
-    loadNextIncompleteDrawing();
-
-    // Conecta los puntos
-    const dotsCanvas = document.getElementById('dots-canvas');
-    const dotsCtx = dotsCanvas.getContext('2d');
-    const checkDotsBtn = document.getElementById('check-dots');
-    const resetDotsBtn = document.getElementById('reset-dots');
-    const dotsFeedback = document.getElementById('dots-feedback');
-    
-    // Puntos para conectar
-    const dots = [
-      {x: 50, y: 50, connected: false},
-      {x: 100, y: 70, connected: false},
-      {x: 150, y: 90, connected: false},
-      {x: 200, y: 110, connected: false},
-      {x: 250, y: 130, connected: false},
-      {x: 300, y: 150, connected: false}
-    ];
-    
-    let selectedDot = null;
-    let connectedDots = [];
-    
-    // Función para dibujar los puntos
-    function drawDots() {
-      dotsCtx.clearRect(0, 0, dotsCanvas.width, dotsCanvas.height);
-      
-      // Dibujar líneas entre puntos conectados
-      if (connectedDots.length > 1) {
-        dotsCtx.beginPath();
-        dotsCtx.moveTo(connectedDots[0].x, connectedDots[0].y);
-        
-        for (let i = 1; i < connectedDots.length; i++) {
-          dotsCtx.lineTo(connectedDots[i].x, connectedDots[i].y);
-        }
-        
-        dotsCtx.stroke();
-      }
-      
-      // Dibujar puntos
-      dots.forEach(dot => {
-        dotsCtx.beginPath();
-        dotsCtx.arc(dot.x, dot.y, 10, 0, Math.PI * 2);
-        dotsCtx.fillStyle = dot.connected ? '#4CAF50' : '#5a9bff';
-        dotsCtx.fill();
-      });
+    body {
+      background-color: #f2f7ff;
+      color: #333;
+      line-height: 1.6;
     }
     
-    // Event listener para el canvas de puntos
-    dotsCanvas.addEventListener('click', function(e) {
-      const rect = dotsCanvas.getBoundingClientRect();
-      const clickX = e.clientX - rect.left;
-      const clickY = e.clientY - rect.top;
-      
-      // Comprobar si se hizo clic en un punto
-      dots.forEach(dot => {
-        const distance = Math.sqrt(Math.pow(clickX - dot.x, 2) + Math.pow(clickY - dot.y, 2));
-        
-        if (distance < 15) {
-          dot.connected = true;
-          connectedDots.push(dot);
-          drawDots();
-        }
-      });
-    });
-    
-    // Event listener para comprobar la conexión
-    checkDotsBtn.addEventListener('click', function() {
-      if (connectedDots.length === dots.length) {
-        dotsFeedback.textContent = '¡Excelente! Has conectado todos los puntos siguiendo la ley de continuidad.';
-        dotsFeedback.style.color = '#4CAF50';
-      } else {
-        dotsFeedback.textContent = 'Aún no has conectado todos los puntos. ¡Sigue intentando!';
-        dotsFeedback.style.color = '#F44336';
-      }
-    });
-    
-    // Event listener para reiniciar
-    resetDotsBtn.addEventListener('click', function() {
-      dots.forEach(dot => {
-        dot.connected = false;
-      });
-      connectedDots = [];
-      drawDots();
-      dotsFeedback.textContent = '';
-    });
-    
-    // Inicializar los puntos
-    drawDots();
-
-    // Clasifica por semejanza
-    const elementsContainer = document.getElementById('elements-container');
-    const dropZones = document.querySelectorAll('.drop-zone');
-    const checkClassificationBtn = document.getElementById('check-classification');
-    const resetClassificationBtn = document.getElementById('reset-classification');
-    const classificationFeedback = document.getElementById('classification-feedback');
-    
-    // Elementos para clasificar
-    const elements = [
-      { type: 'circle', color: 'red', group: 1 },
-      { type: 'circle', color: 'blue', group: 2 },
-      { type: 'circle', color: 'green', group: 3 },
-      { type: 'square', color: 'red', group: 1 },
-      { type: 'square', color: 'blue', group: 2 },
-      { type: 'square', color: 'green', group: 3 },
-      { type: 'triangle', color: 'red', group: 1 },
-      { type: 'triangle', color: 'blue', group: 2 },
-      { type: 'triangle', color: 'green', group: 3 }
-    ];
-    
-    // Función para crear los elementos
-    function createElements() {
-      elementsContainer.innerHTML = '';
-      
-      elements.forEach((element, index) => {
-        const el = document.createElement('div');
-        el.className = `classification-element ${element.type} ${element.color}`;
-        el.dataset.group = element.group;
-        el.draggable = true;
-        
-        // Event listeners para arrastrar
-        el.addEventListener('dragstart', function(e) {
-          e.dataTransfer.setData('text/plain', index);
-        });
-        
-        elementsContainer.appendChild(el);
-      });
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
     }
     
-    // Event listeners para las zonas de destino
-    dropZones.forEach(zone => {
-      zone.addEventListener('dragover', function(e) {
-        e.preventDefault();
-      });
-      
-      zone.addEventListener('drop', function(e) {
-        e.preventDefault();
-        const elementIndex = e.dataTransfer.getData('text/plain');
-        const element = document.querySelectorAll('.classification-element')[elementIndex];
-        
-        this.appendChild(element);
-      });
-    });
-    
-    // Event listener para comprobar la clasificación
-    checkClassificationBtn.addEventListener('click', function() {
-      let correct = true;
-      
-      dropZones.forEach(zone => {
-        const elements = zone.querySelectorAll('.classification-element');
-        let group = null;
-        
-        elements.forEach(element => {
-          if (group === null) {
-            group = element.dataset.group;
-          } else if (group !== element.dataset.group) {
-            correct = false;
-          }
-        });
-      });
-      
-      if (correct) {
-        classificationFeedback.textContent = '¡Correcto! Has agrupado los elementos según la ley de similitud.';
-        classificationFeedback.style.color = '#4CAF50';
-      } else {
-        classificationFeedback.textContent = 'Hay elementos que no están correctamente agrupados. ¡Sigue intentando!';
-        classificationFeedback.style.color = '#F44336';
-      }
-    });
-    
-    // Event listener para reiniciar la clasificación
-    resetClassificationBtn.addEventListener('click', function() {
-      createElements();
-      classificationFeedback.textContent = '';
-    });
-    
-    // Inicializar los elementos
-    createElements();
-
-    // Memorama de leyes
-    const memoryBoard = document.getElementById('memory-board');
-    const memoryAttempts = document.getElementById('memory-attempts');
-    const memoryMatches = document.getElementById('memory-matches');
-    const resetMemoryBtn = document.getElementById('reset-memory');
-    
-    // Cartas para el juego
-    const memoryCards = [
-      { id: 1, type: 'image', law: 'proximidad', content: "{{ url_for('static', filename='images/gestalt_proximity.png') }}" },
-      { id: 2, type: 'text', law: 'proximidad', content: 'Ley de Proximidad' },
-      { id: 3, type: 'image', law: 'similitud', content: "{{ url_for('static', filename='images/gestalt_similarity.png') }}" },
-      { id: 4, type: 'text', law: 'similitud', content: 'Ley de Similitud' },
-      { id: 5, type: 'image', law: 'cierre', content: "{{ url_for('static', filename='images/gestalt_closure.png') }}" },
-      { id: 6, type: 'text', law: 'cierre', content: 'Ley de Cierre' },
-      { id: 7, type: 'image', law: 'continuidad', content: "{{ url_for('static', filename='images/gestalt_continuity.png') }}" },
-      { id: 8, type: 'text', law: 'continuidad', content: 'Ley de Continuidad' },
-      { id: 9, type: 'image', law: 'figura-fondo', content: "{{ url_for('static', filename='images/gestalt_figure_ground.png') }}" },
-      { id: 10, type: 'text', law: 'figura-fondo', content: 'Ley de Figura y Fondo' },
-      { id: 11, type: 'image', law: 'simetria', content: "{{ url_for('static', filename='images/gestalt_symmetry.png') }}" },
-      { id: 12, type: 'text', law: 'simetria', content: 'Ley de Simetría' }
-    ];
-    
-    let flippedCards = [];
-    let matchedPairs = 0;
-    let attempts = 0;
-    
-    // Función para crear el tablero de memoria
-    function createMemoryBoard() {
-      memoryBoard.innerHTML = '';
-      flippedCards = [];
-      matchedPairs = 0;
-      attempts = 0;
-      memoryAttempts.textContent = '0';
-      memoryMatches.textContent = '0';
-      
-      // Mezclar las cartas
-      const shuffledCards = [...memoryCards].sort(() => Math.random() - 0.5);
-      
-      shuffledCards.forEach(card => {
-        const cardElement = document.createElement('div');
-        cardElement.className = 'memory-card';
-        cardElement.dataset.law = card.law;
-        cardElement.dataset.id = card.id;
-        
-        const cardFront = document.createElement('div');
-        cardFront.className = 'card-front';
-        
-        const cardBack = document.createElement('div');
-        cardBack.className = 'card-back';
-        
-        if (card.type === 'image') {
-          const img = document.createElement('img');
-          img.src = card.content;
-          img.alt = card.law;
-          cardBack.appendChild(img);
-        } else {
-          cardBack.textContent = card.content;
-        }
-        
-        cardElement.appendChild(cardFront);
-        cardElement.appendChild(cardBack);
-        
-        cardElement.addEventListener('click', flipCard);
-        
-        memoryBoard.appendChild(cardElement);
-      });
+    h1, h2, h3, h4 {
+      color: #2e3192;
+      margin-bottom: 15px;
+      text-align: center;
     }
     
-    // Función para voltear una carta
-    function flipCard() {
-      if (flippedCards.length === 2) return;
-      if (this.classList.contains('flipped') || this.classList.contains('matched')) return;
+    h1 {
+      font-size: 3rem;
+      margin-top: 30px;
+      text-shadow: 2px 2px 0px #ffd200;
+    }
+    
+    h2 {
+      font-size: 2.5rem;
+      color: #ff6b6b;
+    }
+    
+    h3 {
+      font-size: 2rem;
+      color: #eaeaea;
+      margin-top: 25px;
+    }
+    
+    h4 {
+      font-size: 1.5rem;
+      color: #38b2ac;
+    }
+    
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+
+    /* ENCABEZADO */
+    .header {
+      background-color: #5a67d8;
+      color: white;
+      text-align: center;
+      padding: 30px;
+      border-radius: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+      border: 5px solid #ffd200;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .header h1 {
+      color: white;
+      font-size: 3.5rem;
+      text-shadow: 3px 3px 0px #ff6b6b;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .header p {
+      font-size: 1.5rem;
+      color: #ffd200;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .header::before {
+      content: "👁️";
+      position: absolute;
+      font-size: 10rem;
+      opacity: 0.1;
+      top: -20px;
+      right: 30px;
+      transform: rotate(15deg);
+    }
+    
+    .header::after {
+      content: "👁️";
+      position: absolute;
+      font-size: 10rem;
+      opacity: 0.1;
+      bottom: -40px;
+      left: 30px;
+      transform: rotate(-15deg);
+    }
+
+    /* SECCIONES INFORMATIVAS */
+    .section {
+      background-color: white;
+      border-radius: 20px;
+      padding: 25px;
+      margin-bottom: 40px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border: 3px solid #c7d2fe;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 10px;
+      background: linear-gradient(90deg, #ffd200, #ff6b6b, #5a67d8, #38b2ac);
+    }
+    
+    .intro-image {
+      display: block;
+      width: 80%;
+      max-width: 400px;
+      margin: 20px auto;
+      border-radius: 15px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      border: 3px solid #ffd200;
+    }
+
+    /* LEY BOXES */
+    .law-box {
+      display: flex;
+      flex-direction: column;
+      background-color: #f8fafc;
+      border-radius: 15px;
+      margin: 20px 0;
+      overflow: hidden;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+      border: 2px dashed #c7d2fe;
+      transition: all 0.3s ease;
+    }
+    
+    .law-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+      border: 2px solid #5a67d8;
+    }
+    
+    .law-title {
+      background-color: #5a67d8;
+      color: white;
+      padding: 10px;
+      font-size: 1.8rem;
+      text-align: center;
+      text-shadow: 1px 1px 0px #2e3192;
+    }
+    
+    .law-content {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .law-demo {
+      flex: 1;
+      min-width: 300px;
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+      position: relative;
+      border: 2px solid #e2e8f0;
+    }
+    
+    .law-explanation {
+      flex: 1;
+      min-width: 300px;
+      font-size: 1.1rem;
+    }
+    
+    /* Estilos específicos para cada demo */
+    .proximity-demo {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    
+    .dot-group {
+      display: flex;
+      gap: 5px;
+    }
+    
+    .dot {
+      width: 20px;
+      height: 20px;
+      background-color: #5a67d8;
+      border-radius: 50%;
+    }
+    
+    .similarity-demo {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 15px;
+    }
+    
+    .circle {
+      width: 40px;
+      height: 40px;
+      background-color: #ff6b6b;
+      border-radius: 50%;
+    }
+    
+    .square {
+      width: 40px;
+      height: 40px;
+      background-color: #38b2ac;
+    }
+    
+    .closure-demo {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+    }
+    
+    .incomplete-circle {
+      width: 60px;
+      height: 60px;
+      border: 5px solid #ff6b6b;
+      border-radius: 50%;
+      border-right: 5px solid transparent;
+    }
+    
+    .incomplete-square {
+      width: 60px;
+      height: 60px;
+      border: 5px solid #38b2ac;
+      border-bottom: 5px solid transparent;
+    }
+    
+    .incomplete-triangle {
+      width: 0;
+      height: 0;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+      border-bottom: 60px solid #ffd200;
+      position: relative;
+    }
+    
+    .incomplete-triangle::before {
+      content: "";
+      position: absolute;
+      top: 20px;
+      left: -20px;
+      width: 40px;
+      height: 30px;
+      background-color: white;
+      transform: rotate(45deg);
+    }
+    
+    .continuity-demo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .figure-ground-demo {
+      width: 100%;
+      height: 100%;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><circle cx="100" cy="100" r="50" fill="black"/><rect x="75" y="75" width="50" height="50" fill="white"/></svg>');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .container {
+        padding: 10px;
+      }
       
-      this.classList.add('flipped');
-      flippedCards.push(this);
+      h1 {
+        font-size: 2.5rem;
+      }
       
-      if (flippedCards.length === 2) {
-        attempts++;
-        memoryAttempts.textContent = attempts;
-        
-        setTimeout(checkForMatch, 1000);
+      h2 {
+        font-size: 2rem;
+      }
+      
+      h3 {
+        font-size: 1.8rem;
+      }
+      
+      .law-content {
+        flex-direction: column;
+      }
+      
+      .law-demo, .law-explanation {
+        min-width: 100%;
+      }
+      
+      .activities-container {
+        grid-template-columns: 1fr;
       }
     }
     
-    // Función para comprobar si hay coincidencia
-    function checkForMatch() {
-      const card1 = flippedCards[0];
-      const card2 = flippedCards[1];
-      
-      if (card1.dataset.law === card2.dataset.law && card1.dataset.id !== card2.dataset.id) {
-        card1.classList.add('matched');
-        card2.classList.add('matched');
-        matchedPairs++;
-        memoryMatches.textContent = matchedPairs;
-        
-        if (matchedPairs === 6) {
-          setTimeout(() => {
-            alert('¡Felicidades! Has encontrado todas las parejas.');
-          }, 500);
-        }
-      } else {
-        card1.classList.remove('flipped');
-        card2.classList.remove('flipped');
-      }
-      
-      flippedCards = [];
+    /* DETALLES DECORATIVOS */
+    .decoration {
+      position: absolute;
+      z-index: -1;
+      opacity: 0.5;
+      pointer-events: none;
     }
     
-    // Event listener para reiniciar el juego
-    resetMemoryBtn.addEventListener('click', createMemoryBoard);
+    .deco-1 {
+      top: 10%;
+      left: 5%;
+      font-size: 3rem;
+      color: #ffd200;
+      transform: rotate(-15deg);
+    }
     
-    // Inicializar el juego de memoria
-    createMemoryBoard();
-  </script>
+    .deco-2 {
+      top: 30%;
+      right: 5%;
+      font-size: 4rem;
+      color: #ff6b6b;
+      transform: rotate(25deg);
+    }
+    
+    .deco-3 {
+      bottom: 20%;
+      left: 8%;
+      font-size: 3.5rem;
+      color: #38b2ac;
+      transform: rotate(10deg);
+    }
+    
+    .deco-4 {
+      bottom: 15%;
+      right: 8%;
+      font-size: 2.8rem;
+      color: #5a67d8;
+      transform: rotate(-20deg);
+    }
+    
+    /* ANIMACIONES */
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+    
+    .float {
+      animation: float 4s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    .pulse {
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    /* Estilo para el pie de página */
+    footer {
+      color: white !important;
+    }
+    
+    footer a {
+      color: white !important;
+    }
+  </style>
+  
 {% endblock %}

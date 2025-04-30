@@ -1,0 +1,192 @@
+// Funcionalidad de arrastrar y soltar para el juego de emparejamiento
+const matchItems = document.querySelectorAll('.match-item');
+const dropZones = document.querySelectorAll('.match-drop-zone');
+
+let draggedItem = null;
+
+matchItems.forEach(item => {
+    item.addEventListener('dragstart', function() {
+        draggedItem = this;
+        setTimeout(() => this.classList.add('dragging'), 0);
+    });
+   
+    item.addEventListener('dragend', function() {
+        this.classList.remove('dragging');
+        draggedItem = null;
+    });
+});
+
+dropZones.forEach(zone => {
+    zone.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        this.classList.add('highlight');
+    });
+   
+    zone.addEventListener('dragleave', function() {
+        this.classList.remove('highlight');
+    });
+   
+    zone.addEventListener('drop', function(e) {
+        e.preventDefault();
+        this.classList.remove('highlight');
+       
+        if (draggedItem) {
+            // Verificar si es una zona válida para soltar
+            const isProblem = draggedItem.classList.contains('problem');
+            const isPrinciple = draggedItem.classList.contains('principle');
+            const isProblemsZone = this.id === 'problems-zone';
+            const isPrinciplesZone = this.id === 'principles-zone';
+           
+            if ((isProblem && isProblemsZone) || (isPrinciple && isPrinciplesZone)) {
+                this.appendChild(draggedItem);
+            } else if ((isProblem && isPrinciplesZone) || (isPrinciple && isProblemsZone)) {
+                // Verificar si hay un elemento con el mismo data-match en la zona
+                const matchValue = draggedItem.dataset.match;
+                const potentialMatches = this.querySelectorAll(`.match-item[data-match="${matchValue}"]`);
+               
+                if (potentialMatches.length > 0) {
+                    const matchedItem = potentialMatches[0];
+                   
+                    // Marcar ambos elementos como emparejados
+                    draggedItem.classList.add('matched');
+                    matchedItem.classList.add('matched');
+                   
+                    // Hacer que los elementos emparejados no sean arrastrables
+                    draggedItem.draggable = false;
+                    matchedItem.draggable = false;
+                   
+                    // Incrementar la puntuación
+                    matchScore++;
+                    document.getElementById('match-score').textContent = matchScore;
+                   
+                    // Confeti para emparejamiento correcto
+                    createConfetti(5);
+                   
+                    // Actualizar la barra de progreso
+                    updateMatchProgress();
+                   
+                    // Verificar si se han emparejado todos
+                    if (matchScore === matchTotal) {
+                        setTimeout(() => {
+                            alert('¡Felicidades! Has completado el juego de emparejamiento.');
+                            createConfetti(50);
+                        }, 500);
+                    }
+                } else {
+                    // Si no hay coincidencia, devolver el elemento a su zona original
+                    const originalZone = isProblem ? document.getElementById('problems-zone') : document.getElementById('principles-zone');
+                    originalZone.appendChild(draggedItem);
+                }
+            }
+        }
+    });
+});
+
+// Función para actualizar la barra de progreso del cuestionario
+function updateQuizProgress() {
+    const answeredQuestions = document.querySelectorAll('.quiz-feedback[style*="display: block"]').length;
+    const progressPercentage = Math.round((answeredQuestions / quizTotal) * 100);
+    const progressBar = document.getElementById('quiz-progress');
+   
+    progressBar.style.width = `${progressPercentage}%`;
+    progressBar.textContent = `${progressPercentage}%`;
+   
+    if (progressPercentage === 100) {
+        progressBar.style.backgroundColor = '#4CAF50';
+        setTimeout(() => {
+            alert(`¡Has completado el cuestionario! Puntuación: ${quizScore}/${quizTotal}`);
+            if (quizScore === quizTotal) {
+                createConfetti(50);
+            }
+        }, 500);
+    }
+}
+
+// Función para actualizar la barra de progreso del juego de emparejamiento
+function updateMatchProgress() {
+    const progressPercentage = Math.round((matchScore / matchTotal) * 100);
+    const progressBar = document.getElementById('match-progress');
+   
+    progressBar.style.width = `${progressPercentage}%`;
+    progressBar.textContent = `${progressPercentage}%`;
+   
+    if (progressPercentage === 100) {
+        progressBar.style.backgroundColor = '#4CAF50';
+    }
+}
+
+// Función para crear confeti
+function createConfetti(count) {
+    const celebration = document.getElementById('celebration');
+    celebration.style.display = 'block';
+    celebration.innerHTML = '';
+   
+    const colors = ['#f00', '#0f0', '#00f', '#ff0', '#f0f', '#0ff'];
+   
+    for (let i = 0; i < count; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = `${Math.random() * 100}%`;
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.width = `${Math.random() * 10 + 5}px`;
+        confetti.style.height = `${Math.random() * 10 + 5}px`;
+        confetti.style.animationDuration = `${Math.random() * 3 + 2}s`;
+        celebration.appendChild(confetti);
+    }
+   
+    setTimeout(() => {
+        celebration.style.display = 'none';
+    }, 5000);
+}
+
+// Botón para reiniciar los juegos
+document.getElementById('reset-games').addEventListener('click', function() {
+    // Reiniciar cuestionario
+    quizScore = 0;
+    document.getElementById('quiz-score').textContent = quizScore;
+   
+    const quizOptions = document.querySelectorAll('.quiz-option');
+    quizOptions.forEach(option => {
+        option.classList.remove('correct', 'incorrect');
+        option.style.pointerEvents = 'auto';
+    });
+   
+    const quizFeedbacks = document.querySelectorAll('.quiz-feedback');
+    quizFeedbacks.forEach(feedback => {
+        feedback.style.display = 'none';
+        feedback.textContent = '';
+    });
+   
+    document.getElementById('quiz-progress').style.width = '0%';
+    document.getElementById('quiz-progress').textContent = '0%';
+   
+    // Reiniciar juego de emparejamiento
+    matchScore = 0;
+    document.getElementById('match-score').textContent = matchScore;
+   
+    const problemsZone = document.getElementById('problems-zone');
+    const principlesZone = document.getElementById('principles-zone');
+   
+    const problems = document.querySelectorAll('.match-item.problem');
+    const principles = document.querySelectorAll('.match-item.principle');
+   
+    problems.forEach(problem => {
+        problem.classList.remove('matched');
+        problem.draggable = true;
+        problemsZone.appendChild(problem);
+    });
+   
+    principles.forEach(principle => {
+        principle.classList.remove('matched');
+        principle.draggable = true;
+        principlesZone.appendChild(principle);
+    });
+   
+    document.getElementById('match-progress').style.width = '0%';
+    document.getElementById('match-progress').textContent = '0%';
+});
+});
+</script>
+
+
+{% endblock %}

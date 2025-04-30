@@ -2,271 +2,1586 @@
 {% block title %}Recolección de Datos{% endblock %}
 
 {% block content %}
-  <div class="topic-header data-header">
-    <h2>📊 Recolección de Datos 📊</h2>
-    <p>¡Aprende cómo obtener información importante para tus programas!</p>
-  </div>
-
-  <div class="topic-content">
-    <section class="info-section">
-      <h3>¿Qué es la Recolección de Datos?</h3>
-      <p>La recolección de datos es como juntar pistas para resolver un misterio. Cuando creamos programas, necesitamos saber qué quieren y necesitan los usuarios. Para eso, recolectamos información de diferentes maneras.</p>
-      
-      <div class="data-intro">
-        <img src="{{ url_for('static', filename='images/data_collection.png') }}" alt="Recolección de datos" class="data-image">
-        <p>Recolectar datos nos ayuda a crear mejores programas para los usuarios.</p>
-      </div>
-    </section>
-
-    <section class="info-section">
-      <h3>Métodos de Recolección de Datos</h3>
-      <p>Hay muchas formas de obtener información. Aquí te mostramos las más importantes:</p>
-      
-      <div class="methods-container">
-        <div class="method-card">
-          <div class="method-icon">
-            <i class="fas fa-clipboard-list fa-3x"></i>
-          </div>
-          <h4>Encuestas</h4>
-          <p>Son como cuestionarios donde hacemos preguntas a muchas personas para conocer sus opiniones.</p>
-          <div class="method-example">
-            <img src="{{ url_for('static', filename='images/survey.png') }}" alt="Ejemplo de encuesta">
-          </div>
-        </div>
-        
-        <div class="method-card">
-          <div class="method-icon">
-            <i class="fas fa-comments fa-3x"></i>
-          </div>
-          <h4>Entrevistas</h4>
-          <p>Conversaciones donde hacemos preguntas detalladas a una persona para entender mejor sus necesidades.</p>
-          <div class="method-example">
-            <img src="{{ url_for('static', filename='images/interview.png') }}" alt="Ejemplo de entrevista">
-          </div>
-        </div>
-        
-        <div class="method-card">
-          <div class="method-icon">
-            <i class="fas fa-users fa-3x"></i>
-          </div>
-          <h4>Grupos Focales</h4>
-          <p>Reuniones con varias personas donde todos hablan sobre un tema y comparten ideas.</p>
-          <div class="method-example">
-            <img src="{{ url_for('static', filename='images/focus_group.png') }}" alt="Ejemplo de grupo focal">
-          </div>
-        </div>
-        
-        <div class="method-card">
-          <div class="method-icon">
-            <i class="fas fa-eye fa-3x"></i>
-          </div>
-          <h4>Observación</h4>
-          <p>Miramos cómo las personas usan programas similares para entender qué les gusta y qué no.</p>
-          <div class="method-example">
-            <img src="{{ url_for('static', filename='images/observation.png') }}" alt="Ejemplo de observación">
-          </div>
-        </div>
-        
-        <div class="method-card">
-          <div class="method-icon">
-            <i class="fas fa-chart-bar fa-3x"></i>
-          </div>
-          <h4>Análisis de Datos</h4>
-          <p>Estudiamos números y estadísticas para descubrir patrones y tendencias.</p>
-          <div class="method-example">
-            <img src="{{ url_for('static', filename='images/data_analysis.png') }}" alt="Ejemplo de análisis">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="info-section">
-      <h3>¿Por qué es importante recolectar datos?</h3>
-      <div class="importance-container">
-        <div class="importance-item">
-          <i class="fas fa-bullseye"></i>
-          <h4>Conocer a los usuarios</h4>
-          <p>Nos ayuda a entender quiénes usarán nuestro programa y qué necesitan.</p>
-        </div>
-        
-        <div class="importance-item">
-          <i class="fas fa-lightbulb"></i>
-          <h4>Tener mejores ideas</h4>
-          <p>Con información real, podemos crear soluciones que realmente funcionen.</p>
-        </div>
-        
-        <div class="importance-item">
-          <i class="fas fa-check-circle"></i>
-          <h4>Tomar decisiones correctas</h4>
-          <p>Los datos nos ayudan a decidir qué características incluir en nuestro programa.</p>
-        </div>
-        
-        <div class="importance-item">
-          <i class="fas fa-bug"></i>
-          <h4>Encontrar problemas</h4>
-          <p>Podemos descubrir qué cosas no funcionan bien antes de terminar el programa.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="interactive-section">
-      <h3>¡Crea tu propia encuesta!</h3>
-      <div class="survey-creator">
-        <div class="survey-preview">
-          <h4>Vista previa de tu encuesta</h4>
-          <div class="survey-title">
-            <p><strong>Título:</strong> <span id="preview-title">Mi Encuesta</span></p>
-          </div>
-          <div class="survey-questions" id="survey-questions">
-            <!-- Las preguntas se agregarán aquí -->
-            <div class="preview-question">
-              <p><strong>Pregunta 1:</strong> ¿Cuál es tu color favorito?</p>
-              <div class="preview-options">
-                <label><input type="radio" name="q1"> Rojo</label>
-                <label><input type="radio" name="q1"> Azul</label>
-                <label><input type="radio" name="q1"> Verde</label>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="survey-controls">
-          <h4>Crea tu encuesta</h4>
-          <div class="control-group">
-            <label for="survey-title">Título de la encuesta:</label>
-            <input type="text" id="survey-title" value="Mi Encuesta">
-          </div>
-          
-          <div class="control-group">
-            <label for="question-text">Nueva pregunta:</label>
-            <input type="text" id="question-text" placeholder="Escribe tu pregunta aquí">
-          </div>
-          
-          <div class="control-group">
-            <label>Opciones de respuesta:</label>
-            <div class="option-inputs">
-              <input type="text" class="option-input" placeholder="Opción 1">
-              <input type="text" class="option-input" placeholder="Opción 2">
-              <input type="text" class="option-input" placeholder="Opción 3">
-            </div>
-          </div>
-          
-          <button id="add-question-btn">Agregar pregunta</button>
-        </div>
-      </div>
-    </section>
-
-    <section class="quiz-section">
-      <h3>¡Pon a prueba tus conocimientos!</h3>
-      <div class="quiz-container">
-        <div class="quiz-question">
-          <p>¿Qué método de recolección de datos es mejor para obtener opiniones de muchas personas rápidamente?</p>
-          <div class="quiz-options">
-            <button class="quiz-option" data-correct="true">Encuestas</button>
-            <button class="quiz-option" data-correct="false">Entrevistas</button>
-            <button class="quiz-option" data-correct="false">Observación</button>
-            <button class="quiz-option" data-correct="false">Grupos focales</button>
-          </div>
-          <p class="quiz-feedback"></p>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <script>
-    // Quiz functionality
-    const quizOptions = document.querySelectorAll('.quiz-option');
-    const quizFeedback = document.querySelector('.quiz-feedback');
-
-    quizOptions.forEach(option => {
-      option.addEventListener('click', function() {
-        quizOptions.forEach(btn => btn.disabled = true);
-        
-        if (this.dataset.correct === 'true') {
-          this.classList.add('correct');
-          quizFeedback.textContent = '¡Correcto! ¡Muy bien!';
-          quizFeedback.style.color = '#4CAF50';
-        } else {
-          this.classList.add('incorrect');
-          quizFeedback.textContent = 'Incorrecto. Intenta de nuevo.';
-          quizFeedback.style.color = '#F44336';
-          
-          // Highlight the correct answer
-          quizOptions.forEach(btn => {
-            if (btn.dataset.correct === 'true') {
-              btn.classList.add('correct');
-            }
-          });
-        }
-      });
-    });
-
-    // Survey creator functionality
-    const surveyTitle = document.getElementById('survey-title');
-    const previewTitle = document.getElementById('preview-title');
-    const questionText = document.getElementById('question-text');
-    const optionInputs = document.querySelectorAll('.option-input');
-    const addQuestionBtn = document.getElementById('add-question-btn');
-    const surveyQuestions = document.getElementById('survey-questions');
+  <div class="container">
+    <!-- Decoraciones -->
+    <div class="decoration deco-1">📊</div>
+    <div class="decoration deco-2">📋</div>
+    <div class="decoration deco-3">📈</div>
+    <div class="decoration deco-4">🔍</div>
     
-    let questionCount = 1;
-
-    surveyTitle.addEventListener('input', function() {
-      previewTitle.textContent = this.value;
-    });
-
-    addQuestionBtn.addEventListener('click', function() {
-      const question = questionText.value.trim();
-      if (!question) {
-        alert('Por favor, escribe una pregunta');
-        return;
-      }
+    <!-- Encabezado -->
+    <header class="header">
+      <h1>¡Recolección de Datos!</h1>
+      <p>¡Descubre cómo reunir información importante para tus proyectos!</p>
+    </header>
+    
+    <!-- Introducción -->
+    <section class="section">
+      <h2>¿Qué es la Recolección de Datos?</h2>
+      <p>La recolección de datos es como <strong>juntar pistas</strong> para resolver un misterio. Cuando creamos programas, necesitamos saber qué quieren y necesitan los usuarios. Para eso, recolectamos información de diferentes maneras.</p>
       
-      let options = [];
-      optionInputs.forEach(input => {
-        const option = input.value.trim();
-        if (option) {
-          options.push(option);
-        }
-      });
+      <div class="intro-image-container">
+        <img src="{{ url_for('static', filename='images/recolecciondatos.jpg') }}" alt="Recolección de datos" class="intro-image pulse">
+      </div>
       
-      if (options.length < 2) {
-        alert('Por favor, agrega al menos dos opciones');
-        return;
-      }
+      <p>Recolectar datos nos ayuda a:</p>
+      <ul style="font-size: 1.2rem; margin-left: 30px; margin-bottom: 20px;">
+        <li>Conocer mejor a los usuarios</li>
+        <li>Tener mejores ideas para nuestros programas</li>
+        <li>Tomar decisiones correctas</li>
+        <li>Encontrar problemas antes de terminar el programa</li>
+      </ul>
+    </section>
+    
+    <!-- Métodos principales -->
+    <section class="section">
+      <h2>Los 5 Métodos Principales</h2>
       
-      questionCount++;
+      <!-- Método de Encuestas -->
+      <div class="law-box">
+        <div class="law-title">1. Encuestas</div>
+        <div class="law-content">
+          <div class="law-demo">
+            <div class="method-demo">
+              <img src="{{ url_for('static', filename='images/gifs/ENCUESTA.gif') }}" alt="Ejemplo de encuesta" class="method-gif">
+            </div>
+          </div>
+          <div class="law-explanation">
+            <p>Son como <strong>cuestionarios</strong> donde hacemos preguntas a muchas personas para conocer sus opiniones.</p>
+            <p>¡Es como cuando preguntas a todos tus amigos qué juego prefieren para la fiesta!</p>
+          </div>
+        </div>
+      </div>
       
-      // Create preview question
-      const previewQuestion = document.createElement('div');
-      previewQuestion.className = 'preview-question';
+      <!-- Método de Entrevistas -->
+      <div class="law-box">
+        <div class="law-title">2. Entrevistas</div>
+        <div class="law-content">
+          <div class="law-demo">
+            <div class="method-demo">
+              <img src="{{ url_for('static', filename='images/gifs/entrevistas.gif') }}" alt="Ejemplo de entrevista" class="method-gif">
+            </div>
+          </div>
+          <div class="law-explanation">
+            <p>Son <strong>conversaciones</strong> donde hacemos preguntas detalladas a una persona para entender mejor sus necesidades.</p>
+            <p>¡Como cuando hablas con tu mejor amigo para conocer todos los detalles de su día!</p>
+          </div>
+        </div>
+      </div>
       
-      const questionTitle = document.createElement('p');
-      questionTitle.innerHTML = `<strong>Pregunta ${questionCount}:</strong> ${question}`;
-      previewQuestion.appendChild(questionTitle);
+      <!-- Método de Grupos Focales -->
+      <div class="law-box">
+        <div class="law-title">3. Grupos Focales</div>
+        <div class="law-content">
+          <div class="law-demo">
+            <div class="method-demo">
+              <img src="{{ url_for('static', filename='images/gifs/grupos_focales.gif') }}" alt="Ejemplo de grupo focal" class="method-gif">
+            </div>
+          </div>
+          <div class="law-explanation">
+            <p>Son <strong>reuniones</strong> con varias personas donde todos hablan sobre un tema y comparten ideas.</p>
+            <p>¡Como cuando te juntas con tus amigos para decidir qué hacer en las vacaciones!</p>
+          </div>
+        </div>
+      </div>
       
-      const previewOptions = document.createElement('div');
-      previewOptions.className = 'preview-options';
+      <!-- Método de Observación -->
+      <div class="law-box">
+        <div class="law-title">4. Observación</div>
+        <div class="law-content">
+          <div class="law-demo">
+            <div class="method-demo">
+              <img src="{{ url_for('static', filename='images/gifs/observacion.gif') }}" alt="Ejemplo de observación" class="method-gif">
+            </div>
+          </div>
+          <div class="law-explanation">
+            <p>Es cuando <strong>miramos</strong> cómo las personas usan programas similares para entender qué les gusta y qué no.</p>
+            <p>¡Como cuando miras cómo juega tu amigo para aprender sus trucos!</p>
+          </div>
+        </div>
+      </div>
       
-      options.forEach(option => {
-        const label = document.createElement('label');
-        const radio = document.createElement('input');
-        radio.type = 'radio';
-        radio.name = `q${questionCount}`;
+      <!-- Método de Análisis de Datos -->
+      <div class="law-box">
+        <div class="law-title">5. Análisis de Datos</div>
+        <div class="law-content">
+          <div class="law-demo">
+            <div class="method-demo">
+              <img src="{{ url_for('static', filename='images/gifs/analisis_datos.gif') }}" alt="Ejemplo de análisis" class="method-gif">
+            </div>
+          </div>
+          <div class="law-explanation">
+            <p>Es cuando <strong>estudiamos números y estadísticas</strong> para descubrir patrones y tendencias.</p>
+            <p>¡Como cuando cuentas cuántas veces has ganado en diferentes juegos para saber cuál es tu favorito!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Sección de Juego de Crear Encuesta -->
+    <section class="section">
+      <h2>¡Crea tu propia encuesta!</h2>
+      <p class="section-intro">Ahora que ya sabes sobre la recolección de datos, ¡vamos a practicar creando una encuesta divertida!</p>
+      
+      <div class="survey-creator">
+        <div class="survey-builder">
+          <div class="survey-header">
+            <input type="text" id="survey-title" placeholder="Título de tu encuesta" class="survey-title-input">
+          </div>
+          
+          <div class="questions-container" id="questions-container">
+            <!-- Las preguntas se añadirán aquí -->
+            <div class="empty-state">
+              <p>¡Haz clic en "Añadir Pregunta" para comenzar tu encuesta!</p>
+              <div class="empty-state-icon">📝</div>
+            </div>
+          </div>
+          
+          <div class="survey-controls">
+            <button id="add-question" class="control-button add-button">
+              <span class="button-icon">+</span> Añadir Pregunta
+            </button>
+            <button id="preview-survey" class="control-button preview-button">
+              <span class="button-icon">👁️</span> Vista Previa
+            </button>
+            <button id="reset-survey" class="control-button reset-button">
+              <span class="button-icon">🔄</span> Reiniciar
+            </button>
+          </div>
+        </div>
         
-        label.appendChild(radio);
-        label.appendChild(document.createTextNode(` ${option}`));
-        previewOptions.appendChild(label);
-      });
+        <div class="survey-preview" id="survey-preview" style="display: none;">
+          <div class="preview-header">
+            <h3>Vista Previa de tu Encuesta</h3>
+            <button id="back-to-edit" class="back-button">Volver a Editar</button>
+          </div>
+          <div class="preview-content" id="preview-content">
+  
+
+            <!-- Vista previa de la encuesta -->
+  <div class="survey-preview" id="survey-preview" style="display: none;">
+    <div class="preview-header">
+      <h3>Vista Previa de tu Encuesta</h3>
+      <div class="preview-buttons">
+        <button id="back-to-edit" class="back-button">Volver a Editar</button>
+        <button id="save-survey" class="save-button">Guardar Encuesta</button>
+      </div>
+    </div>
+    <div class="preview-content" id="preview-content">
+      <!-- La vista previa se generará aquí -->
+    
+    
+    </div>
+  </div>
+          </div>
+    </div>
+  </div>
+    
+   
+
+<!-- Sección de Evaluación -->
+<section class="section">
+  <h2>Evaluación de Métodos de Recolección</h2>
+  <p class="section-intro">Ahora que conoces los diferentes métodos, ¡vamos a evaluar cuál es mejor para cada situación!</p>
+  
+  <div class="evaluation-container">
+    <div class="evaluation-scenario">
+      <h3 class="scenario-title">Escenario 1: Videojuego para niños</h3>
+      <p class="scenario-description">Estás creando un videojuego para niños de 8-12 años y necesitas saber qué tipo de personajes prefieren.</p>
       
-      previewQuestion.appendChild(previewOptions);
-      surveyQuestions.appendChild(previewQuestion);
+      <div class="methods-comparison">
+        <div class="method-card">
+          <div class="method-icon">📋</div>
+          <h4>Encuestas</h4>
+          <div class="rating">
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star">★</span>
+          </div>
+          <p>Muy bueno para recoger muchas opiniones rápidamente.</p>
+        </div>
+        
+        <div class="method-card">
+          <div class="method-icon">🗣️</div>
+          <h4>Entrevistas</h4>
+          <div class="rating">
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+          </div>
+          <p>Bueno para entender en profundidad las preferencias.</p>
+        </div>
+        
+        <div class="method-card best-choice">
+          <div class="method-icon">👥</div>
+          <h4>Grupos Focales</h4>
+          <div class="rating">
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+          </div>
+          <p>¡Excelente! Los niños pueden compartir ideas y inspirarse mutuamente.</p>
+          <div class="best-badge">Mejor opción</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="evaluation-scenario">
+      <h3 class="scenario-title">Escenario 2: App de tareas escolares</h3>
+      <p class="scenario-description">Estás diseñando una app para ayudar a organizar tareas escolares y quieres saber cómo la usarían los estudiantes.</p>
       
-      // Reset inputs
-      questionText.value = '';
-      optionInputs.forEach(input => {
-        input.value = '';
-      });
+      <div class="methods-comparison">
+        <div class="method-card">
+          <div class="method-icon">📋</div>
+          <h4>Encuestas</h4>
+          <div class="rating">
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+          </div>
+          <p>Útil para recoger datos básicos de muchos estudiantes.</p>
+        </div>
+        
+        <div class="method-card">
+          <div class="method-icon">👁️</div>
+          <h4>Observación</h4>
+          <div class="rating">
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+          </div>
+          <p>¡Perfecto! Ver cómo organizan sus tareas actualmente te dará ideas valiosas.</p>
+          <div class="best-badge">Mejor opción</div>
+        </div>
+        
+        <div class="method-card">
+          <div class="method-icon">📊</div>
+          <h4>Análisis de Datos</h4>
+          <div class="rating">
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star">★</span>
+          </div>
+          <p>Muy útil para analizar patrones de uso en apps similares.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Quiz Section -->
+    <section class="section">
+      <h2>¡Pon a prueba tus conocimientos!</h2>
+      <div class="quiz-container card-shadow">
+        <div class="quiz-questions">
+          <!-- Pregunta 1 -->
+          <div class="quiz-question" data-question="1">
+            <p class="question-text">¿Qué método de recolección de datos es mejor para obtener opiniones de muchas personas rápidamente?</p>
+            <div class="quiz-options">
+              <button class="quiz-option animate-hover" data-correct="true">Encuestas</button>
+              <button class="quiz-option animate-hover" data-correct="false">Entrevistas</button>
+              <button class="quiz-option animate-hover" data-correct="false">Observación</button>
+              <button class="quiz-option animate-hover" data-correct="false">Grupos focales</button>
+            </div>
+          </div>
+
+          <!-- Pregunta 2 -->
+          <div class="quiz-question" data-question="2" style="display: none;">
+            <p class="question-text">¿Cuál es el propósito principal de los grupos focales?</p>
+            <div class="quiz-options">
+              <button class="quiz-option animate-hover" data-correct="false">Recolectar datos estadísticos</button>
+              <button class="quiz-option animate-hover" data-correct="true">Obtener opiniones detalladas en grupo</button>
+              <button class="quiz-option animate-hover" data-correct="false">Hacer pruebas de usabilidad</button>
+              <button class="quiz-option animate-hover" data-correct="false">Analizar datos históricos</button>
+            </div>
+          </div>
+
+          <!-- Pregunta 3 -->
+          <div class="quiz-question" data-question="3" style="display: none;">
+            <p class="question-text">¿Qué método es más adecuado cuando necesitas información muy detallada de una persona?</p>
+            <div class="quiz-options">
+              <button class="quiz-option animate-hover" data-correct="false">Encuestas</button>
+              <button class="quiz-option animate-hover" data-correct="true">Entrevistas</button>
+              <button class="quiz-option animate-hover" data-correct="false">Análisis de datos</button>
+              <button class="quiz-option animate-hover" data-correct="false">Observación</button>
+            </div>
+          </div>
+
+          <!-- Resto del quiz se mantiene igual -->
+          <p class="quiz-feedback"></p>
+
+          <!-- Botones de navegación -->
+          <div class="quiz-navigation">
+            <button class="nav-button" id="prevQuestion" disabled>Anterior</button>
+            <button class="nav-button" id="nextQuestion" disabled>Siguiente</button>
+          </div>
+
+          <button class="restart-button" id="restartQuiz" style="display: none;">Reiniciar Quiz</button>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <style>
+    /* ESTILOS GENERALES */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+    }
+    
+    body {
+      background-color: #f2f7ff;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    h1, h2, h3, h4 {
+      color: #2e3192;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    
+    h1 {
+      font-size: 3rem;
+      margin-top: 30px;
+      text-shadow: 2px 2px 0px #ffd200;
+    }
+    
+    h2 {
+      font-size: 2.5rem;
+      color: #ff6b6b;
+    }
+    
+    h3 {
+      font-size: 2rem;
+      color: #ffffff;
+      margin-top: 25px;
+    }
+    
+    h4 {
+      font-size: 1.5rem;
+      color: #38b2ac;
+    }
+    
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+
+    /* ENCABEZADO */
+    .header {
+      background-color: #5a67d8;
+      color: white;
+      text-align: center;
+      padding: 30px;
+      border-radius: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+      border: 5px solid #ffd200;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .header h1 {
+      color: white;
+      font-size: 3.5rem;
+      text-shadow: 3px 3px 0px #ff6b6b;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .header p {
+      font-size: 1.5rem;
+      color: #ffd200;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .header::before {
+      content: "📊";
+      position: absolute;
+      font-size: 10rem;
+      opacity: 0.1;
+      top: -20px;
+      right: 30px;
+      transform: rotate(15deg);
+    }
+    
+    .header::after {
+      content: "📊";
+      position: absolute;
+      font-size: 10rem;
+      opacity: 0.1;
+      bottom: -40px;
+      left: 30px;
+      transform: rotate(-15deg);
+    }
+
+    /* SECCIONES INFORMATIVAS */
+    .section {
+      background-color: white;
+      border-radius: 20px;
+      padding: 25px;
+      margin-bottom: 40px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border: 3px solid #c7d2fe;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 10px;
+      background: linear-gradient(90deg, #ffd200, #ff6b6b, #5a67d8, #38b2ac);
+    }
+    
+    .intro-image-container {
+      text-align: center;
+      margin: 20px 0;
+    }
+    
+    .intro-image {
+      display: block;
+      width: 80%;
+      max-width: 400px;
+      margin: 20px auto;
+      border-radius: 15px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      border: 3px solid #ffd200;
+    }
+
+    /* MÉTODO BOXES */
+    .law-box {
+      display: flex;
+      flex-direction: column;
+      background-color: #f8fafc;
+      border-radius: 15px;
+      margin: 20px 0;
+      overflow: hidden;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+      border: 2px dashed #c7d2fe;
+      transition: all 0.3s ease;
+    }
+    
+    .law-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+      border: 2px solid #5a67d8;
+    }
+    
+    .law-title {
+      background-color: #5a67d8;
+      color: white;
+      padding: 10px;
+      font-size: 1.8rem;
+      text-align: center;
+      text-shadow: 1px 1px 0px #2e3192;
+    }
+    
+    .law-content {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .law-demo {
+      flex: 1;
+      min-width: 300px;
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+      position: relative;
+      border: 2px solid #e2e8f0;
+    }
+    
+    .law-explanation {
+      flex: 1;
+      min-width: 300px;
+      font-size: 1.1rem;
+    }
+    
+    .method-demo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .method-gif {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 8px;
+    }
+
+
+    .preview-label {
+      font-size: 1.1rem;
+    }
+    
+    /* ESTILOS PARA LA SECCIÓN DE EVALUACIÓN */
+    .evaluation-container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+    
+    .evaluation-scenario {
+      background-color: #f8fafc;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      border: 2px dashed #c7d2fe;
+    }
+    
+    .scenario-title {
+      color: #5a67d8;
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+    
+    .scenario-description {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: #4a5568;
+    }
+    
+    .methods-comparison {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    
+    .method-card {
+      background-color: white;
+      border-radius: 12px;
+      padding: 20px;
+      width: 250px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      border: 2px solid #e2e8f0;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    .method-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    }
+    
+    .method-icon {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    
+    .method-card h4 {
+      text-align: center;
+      margin-bottom: 10px;
+      color: #2d3748;
+    }
+    
+    .rating {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+    
+    .star {
+      color: #cbd5e0;
+    }
+    
+    .star.filled {
+      color: #ffd200;
+    }
+    
+    .method-card p {
+      font-size: 1rem;
+      text-align: center;
+    }
+    
+    .best-choice {
+      border-color: #5a67d8;
+      background-color: #f0f5ff;
+    }
+    
+    .best-badge {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background-color: #5a67d8;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    
+    @media (max-width: 768px) {
+      .methods-comparison {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .method-card {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+    
+    /* DETALLES DECORATIVOS */
+    .decoration {
+      position: absolute;
+      z-index: -1;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+
+    /* QUIZ STYLES */
+    .quiz-container {
+      background-color: white;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      margin: 20px 0;
+    }
+    
+    .quiz-question {
+      margin-bottom: 20px;
+    }
+    
+    .question-text {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #2e3192;
+    }
+    
+    .quiz-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    
+    .quiz-option {
+      background: white;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .quiz-option:hover {
+      background: #f5f5f5;
+      border-color: #5a67d8;
+    }
+    
+    .quiz-option.correct {
+      background: #4CAF50;
+      color: white;
+      border-color: #4CAF50;
+    }
+    
+    .quiz-option.incorrect {
+      background: #F44336;
+      color: white;
+      border-color: #F44336;
+    }
+    
+    .quiz-navigation {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    
+    .nav-button {
+      background: #5a67d8;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .restart-button {
+      background: #ff6b6b;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin: 20px auto;
+      display: block;
+      transition: all 0.3s ease;
+    }
+    
+    .restart-button:hover {
+      background: #e74c3c;
+    }
+    
+    /* DETALLES DECORATIVOS */
+    .decoration {
+      position: absolute;
+      z-index: -1;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    
+    .deco-1 {
+      top: 10%;
+      left: 5%;
+      font-size: 3rem;
+      color: #ffd200;
+      transform: rotate(-15deg);
+    }
+    
+    .deco-2 {
+      top: 30%;
+      right: 5%;
+      font-size: 4rem;
+      color: #ff6b6b;
+      transform: rotate(25deg);
+    }
+    
+    .deco-3 {
+      bottom: 20%;
+      left: 8%;
+      font-size: 3.5rem;
+      color: #38b2ac;
+      transform: rotate(10deg);
+    }
+    
+    .deco-4 {
+      bottom: 15%;
+      right: 8%;
+      font-size: 2.8rem;
+      color: #5a67d8;
+      transform: rotate(-20deg);
+    }
+    
+    /* ANIMACIONES */
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+    
+    .float {
+      animation: float 4s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    .pulse {
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .container {
+        padding: 10px;
+      }
+      
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      h2 {
+        font-size: 2rem;
+      }
+      
+      h3 {
+        font-size: 1.8rem;
+      }
+      
+      .law-content {
+        flex-direction: column;
+      }
+      
+      .law-demo, .law-explanation {
+        min-width: 100%;
+      }
+      
+      .quiz-options {
+        grid-template-columns: 1fr;
+      }
+      
+      .survey-builder {
+        padding: 15px;
+      }
+    }
+    
+    /* ESTILOS PARA EL CREADOR DE ENCUESTAS */
+    .section-intro {
+      text-align: center;
+      font-size: 1.3rem;
+      margin-bottom: 25px;
+      color: #5a67d8;
+    }
+    
+    .survey-creator {
+      background-color: #f8fafc;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      margin: 20px 0;
+      border: 2px solid #c7d2fe;
+    }
+    
+    .survey-builder {
+      padding: 25px;
+    }
+    
+    .survey-title-input {
+      width: 100%;
+      padding: 12px 15px;
+      font-size: 1.5rem;
+      border: 2px dashed #c7d2fe;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      background-color: white;
+      color: #2e3192;
+      text-align: center;
+      font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+      transition: all 0.3s ease;
+    }
+    
+    .survey-title-input:focus {
+      outline: none;
+      border-color: #5a67d8;
+      box-shadow: 0 0 8px rgba(90, 103, 216, 0.4);
+    }
+    
+    .questions-container {
+      min-height: 200px;
+      background-color: white;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+      border: 2px solid #e2e8f0;
+    }
+    
+    .empty-state {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 170px;
+      color: #a0aec0;
+      text-align: center;
+    }
+    
+    .empty-state-icon {
+      font-size: 3rem;
+      margin-top: 15px;
+      color: #c7d2fe;
+    }
+    
+    .survey-controls {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .control-button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+      font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+    }
+    
+    .add-button {
+      background-color: #5a67d8;
+      color: white;
+    }
+    
+    .add-button:hover {
+      background-color: #4c51bf;
+      transform: translateY(-2px);
+    }
+    
+    .preview-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .preview-buttons {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .back-button {
+      background-color: #5a67d8;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 15px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+    }
+    
+    .back-button:hover {
+      background-color: #4c51bf;
+    }
+    
+    .save-button {
+      background-color: #38b2ac;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 15px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+    }
+    
+    .save-button:hover {
+      background-color: #319795;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(56, 178, 172, 0.3);
+    }
+
+    .preview-button {
+      background-color: #38b2ac;
+      color: white;
+    }
+    
+    .preview-button:hover {
+      background-color: #319795;
+      transform: translateY(-2px);
+    }
+    
+    .reset-button {
+      background-color: #ff6b6b;
+      color: white;
+    }
+    
+    .reset-button:hover {
+      background-color: #e53e3e;
+      transform: translateY(-2px);
+    }
+    
+    .button-icon {
+      font-size: 1.2rem;
+    }
+    
+    .survey-question {
+      background-color: #f0f5ff;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-left: 4px solid #5a67d8;
+      position: relative;
+    }
+    
+    .question-input {
+      width: 100%;
+      padding: 10px;
+      font-size: 1.1rem;
+      border: 1px solid #c7d2fe;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+    }
+    
+    .question-type {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    
+    .type-option {
+      background-color: white;
+      border: 1px solid #c7d2fe;
+      border-radius: 6px;
+      padding: 8px 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .type-option.selected {
+      background-color: #5a67d8;
+      color: white;
+      border-color: #4c51bf;
+    }
+    
+    .options-container {
+      margin-top: 10px;
+    }
+    
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    
+    .option-input {
+      flex: 1;
+      padding: 8px;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+    }
+    
+    .remove-option {
+      background-color: #ff6b6b;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 0.8rem;
+    }
+    
+    .add-option {
+      background-color: #5a67d8;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 6px 12px;
+      margin-top: 5px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .remove-question {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #ff6b6b;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    
+    .survey-preview {
+      padding: 25px;
+      background-color: #f8fafc;
+    }
+    
+    .preview-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .back-button {
+      background-color: #5a67d8;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 15px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+    }
+    
+    .back-button:hover {
+      background-color: #4c51bf;
+    }
+    
+    .preview-content {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      border: 2px solid #e2e8f0;
+    }
+    
+    .preview-title {
+      font-size: 1.8rem;
+      color: #2e3192;
+      text-align: center;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px dashed #c7d2fe;
+    }
+    
+    .preview-question {
+      margin-bottom: 25px;
+    }
+    
+    .preview-question-text {
+      font-size: 1.3rem;
+      color: #5a67d8;
+      margin-bottom: 10px;
+    }
+    
+    .preview-options {
+      margin-left: 15px;
+    }
+    
+    .preview-option {
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .preview-input {
+      margin-right: 5px;
+    }
+    
+    .preview-label {
+      font-size: 1.1rem;
+    }
+    
+    /* DETALLES DECORATIVOS */
+    .decoration {
+      position: absolute;
+      z-index: -1;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  </style>
+  
+  </style>
+  
+  <script>
+    // Funcionalidad para el creador de encuestas
+    document.addEventListener('DOMContentLoaded', function() {
+        const addQuestionBtn = document.getElementById('add-question');
+        const previewBtn = document.getElementById('preview-survey');
+        const resetBtn = document.getElementById('reset-survey');
+        const backToEditBtn = document.getElementById('back-to-edit');
+        const questionsContainer = document.getElementById('questions-container');
+        const surveyPreview = document.getElementById('survey-preview');
+        const previewContent = document.getElementById('preview-content');
+        const surveyBuilder = document.querySelector('.survey-builder');
+        
+        // Contador para IDs únicos
+        let questionCounter = 0;
+        
+        // Añadir una nueva pregunta
+        addQuestionBtn.addEventListener('click', function() {
+            // Eliminar el estado vacío si existe
+            const emptyState = questionsContainer.querySelector('.empty-state');
+            if (emptyState) {
+                emptyState.remove();
+            }
+            
+            questionCounter++;
+            const questionId = `question-${questionCounter}`;
+            
+            const questionDiv = document.createElement('div');
+            questionDiv.className = 'survey-question';
+            questionDiv.dataset.id = questionId;
+            
+            questionDiv.innerHTML = `
+                <input type="text" class="question-input" placeholder="Escribe tu pregunta aquí" data-question="${questionId}">
+                <div class="question-type">
+                    <div class="type-option selected" data-type="multiple" data-question="${questionId}">Opción múltiple</div>
+                    <div class="type-option" data-type="checkbox" data-question="${questionId}">Casillas</div>
+                    <div class="type-option" data-type="text" data-question="${questionId}">Texto</div>
+                </div>
+                <div class="options-container" data-question="${questionId}">
+                    <div class="option-item">
+                        <input type="text" class="option-input" placeholder="Opción 1">
+                        <button class="remove-option">×</button>
+                    </div>
+                    <div class="option-item">
+                        <input type="text" class="option-input" placeholder="Opción 2">
+                        <button class="remove-option">×</button>
+                    </div>
+                    <button class="add-option">+ Añadir opción</button>
+                </div>
+                <button class="remove-question">×</button>
+            `;
+            
+            questionsContainer.appendChild(questionDiv);
+            
+            // Configurar eventos para la nueva pregunta
+            setupQuestionEvents(questionDiv);
+        });
+        
+        // Configurar eventos para una pregunta
+        function setupQuestionEvents(questionDiv) {
+            // Cambiar tipo de pregunta
+            const typeOptions = questionDiv.querySelectorAll('.type-option');
+            typeOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    const questionId = this.dataset.question;
+                    const optionsContainer = document.querySelector(`.options-container[data-question="${questionId}"]`);
+                    
+                    // Actualizar selección visual
+                    typeOptions.forEach(opt => opt.classList.remove('selected'));
+                    this.classList.add('selected');
+                    
+                    // Mostrar/ocultar opciones según el tipo
+                    if (this.dataset.type === 'text') {
+                        optionsContainer.style.display = 'none';
+                    } else {
+                        optionsContainer.style.display = 'block';
+                    }
+                });
+            });
+            
+            // Añadir opción
+            const addOptionBtn = questionDiv.querySelector('.add-option');
+            addOptionBtn.addEventListener('click', function() {
+                const optionsContainer = this.parentElement;
+                const optionCount = optionsContainer.querySelectorAll('.option-item').length + 1;
+                
+                const optionItem = document.createElement('div');
+                optionItem.className = 'option-item';
+                optionItem.innerHTML = `
+                    <input type="text" class="option-input" placeholder="Opción ${optionCount}">
+                    <button class="remove-option">×</button>
+                `;
+                
+                // Insertar antes del botón de añadir
+                optionsContainer.insertBefore(optionItem, this);
+                
+                // Configurar evento para eliminar opción
+                setupRemoveOptionEvent(optionItem.querySelector('.remove-option'));
+            });
+            
+            // Configurar eventos para eliminar opciones existentes
+            const removeOptionBtns = questionDiv.querySelectorAll('.remove-option');
+            removeOptionBtns.forEach(btn => {
+                setupRemoveOptionEvent(btn);
+            });
+            
+            // Eliminar pregunta
+            const removeQuestionBtn = questionDiv.querySelector('.remove-question');
+            removeQuestionBtn.addEventListener('click', function() {
+                questionDiv.remove();
+                
+                // Mostrar estado vacío si no hay preguntas
+                if (questionsContainer.querySelectorAll('.survey-question').length === 0) {
+                    questionsContainer.innerHTML = `
+                        <div class="empty-state">
+                            <p>¡Haz clic en "Añadir Pregunta" para comenzar tu encuesta!</p>
+                            <div class="empty-state-icon">📝</div>
+                        </div>
+                    `;
+                }
+            });
+        }
+        
+        // Configurar evento para eliminar opción
+        function setupRemoveOptionEvent(btn) {
+            btn.addEventListener('click', function() {
+                const optionsContainer = this.closest('.options-container');
+                const optionItems = optionsContainer.querySelectorAll('.option-item');
+                
+                // No eliminar si solo quedan 2 opciones
+                if (optionItems.length <= 2) {
+                    alert('¡Debes tener al menos 2 opciones!');
+                    return;
+                }
+                
+                this.closest('.option-item').remove();
+                
+                // Actualizar placeholders
+                const remainingOptions = optionsContainer.querySelectorAll('.option-item');
+                remainingOptions.forEach((item, index) => {
+                    const input = item.querySelector('.option-input');
+                    if (!input.value) {
+                        input.placeholder = `Opción ${index + 1}`;
+                    }
+                });
+            });
+        }
+        
+        // Vista previa de la encuesta
+        previewBtn.addEventListener('click', function() {
+            const questions = questionsContainer.querySelectorAll('.survey-question');
+            const surveyTitle = document.getElementById('survey-title').value || 'Mi Encuesta';
+            
+            if (questions.length === 0) {
+                alert('¡Añade al menos una pregunta para ver la vista previa!');
+                return;
+            }
+            
+            // Generar HTML de vista previa
+            let previewHTML = `<h3 class="preview-title">${surveyTitle}</h3>`;
+            
+            questions.forEach((question, index) => {
+                const questionText = question.querySelector('.question-input').value || `Pregunta ${index + 1}`;
+                const questionType = question.querySelector('.type-option.selected').dataset.type;
+                
+                previewHTML += `<div class="preview-question">
+                    <p class="preview-question-text">${index + 1}. ${questionText}</p>`;
+                
+                if (questionType === 'text') {
+                    previewHTML += `<textarea class="preview-textarea" rows="3" placeholder="Escribe tu respuesta aquí"></textarea>`;
+                } else {
+                    previewHTML += `<div class="preview-options">`;
+                    
+                    const options = question.querySelectorAll('.option-input');
+                    options.forEach((option, optIndex) => {
+                        const optionText = option.value || `Opción ${optIndex + 1}`;
+                        const inputType = questionType === 'multiple' ? 'radio' : 'checkbox';
+                        const inputName = `question-${index}`;
+                        
+                        previewHTML += `
+                            <div class="preview-option">
+                                <input type="${inputType}" name="${inputName}" class="preview-input" id="${inputName}-${optIndex}">
+                                <label class="preview-label" for="${inputName}-${optIndex}">${optionText}</label>
+                            </div>
+                        `;
+                    });
+                    
+                    previewHTML += `</div>`;
+                }
+                
+                previewHTML += `</div>`;
+            });
+            
+            // Mostrar vista previa
+            previewContent.innerHTML = previewHTML;
+            surveyBuilder.style.display = 'none';
+            surveyPreview.style.display = 'block';
+        });
+        
+        // Volver a editar
+        backToEditBtn.addEventListener('click', function() {
+            surveyPreview.style.display = 'none';
+            surveyBuilder.style.display = 'block';
+        });
+        
+        // Reiniciar encuesta
+        resetBtn.addEventListener('click', function() {
+            if (confirm('¿Estás seguro de que quieres reiniciar la encuesta? Perderás todas las preguntas.')) {
+                document.getElementById('survey-title').value = '';
+                questionsContainer.innerHTML = `
+                    <div class="empty-state">
+                        <p>¡Haz clic en "Añadir Pregunta" para comenzar tu encuesta!</p>
+                        <div class="empty-state-icon">📝</div>
+                    </div>
+                `;
+                questionCounter = 0;
+            }
+        });
+
+        // Funcionalidad para el quiz
+        const quizOptions = document.querySelectorAll('.quiz-option');
+        const nextButton = document.getElementById('nextQuestion');
+        const prevButton = document.getElementById('prevQuestion');
+        const restartButton = document.getElementById('restartQuiz');
+        const quizQuestions = document.querySelectorAll('.quiz-question');
+        const quizFeedback = document.querySelector('.quiz-feedback');
+        
+        let currentQuestion = 1;
+        let score = 0;
+        let answered = false;
+        
+        // Manejar clic en opciones del quiz
+        quizOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                // Si ya se respondió esta pregunta, no hacer nada
+                if (answered) return;
+                
+                answered = true;
+                const isCorrect = this.dataset.correct === 'true';
+                
+                // Marcar la opción seleccionada como correcta o incorrecta
+                if (isCorrect) {
+                    this.classList.add('correct');
+                    score++;
+                    quizFeedback.textContent = '¡Correcto! 🎉';
+                    quizFeedback.style.color = '#4CAF50';
+                } else {
+                    this.classList.add('incorrect');
+                    quizFeedback.textContent = '¡Incorrecto! Intenta de nuevo.';
+                    quizFeedback.style.color = '#F44336';
+                    
+                    // Mostrar la respuesta correcta
+                    const correctOption = document.querySelector(`.quiz-question[data-question="${currentQuestion}"] .quiz-option[data-correct="true"]`);
+                    correctOption.classList.add('correct');
+                }
+                
+                // Habilitar el botón siguiente
+                nextButton.disabled = false;
+            });
+        });
+        
+        // Manejar clic en botón siguiente
+        nextButton.addEventListener('click', function() {
+            // Si es la última pregunta, mostrar resultado final
+            if (currentQuestion === quizQuestions.length) {
+                showFinalResult();
+                return;
+            }
+            
+            // Ocultar pregunta actual y mostrar la siguiente
+            document.querySelector(`.quiz-question[data-question="${currentQuestion}"]`).style.display = 'none';
+            currentQuestion++;
+            document.querySelector(`.quiz-question[data-question="${currentQuestion}"]`).style.display = 'block';
+            
+            // Resetear estado
+            answered = false;
+            quizFeedback.textContent = '';
+            
+            // Actualizar botones de navegación
+            updateNavigationButtons();
+        });
+        
+        // Manejar clic en botón anterior
+        prevButton.addEventListener('click', function() {
+            // Ocultar pregunta actual y mostrar la anterior
+            document.querySelector(`.quiz-question[data-question="${currentQuestion}"]`).style.display = 'none';
+            currentQuestion--;
+            document.querySelector(`.quiz-question[data-question="${currentQuestion}"]`).style.display = 'block';
+            
+            // Actualizar botones de navegación
+            updateNavigationButtons();
+        });
+        
+        // Manejar clic en botón reiniciar
+        restartButton.addEventListener('click', function() {
+            // Resetear todo el quiz
+            currentQuestion = 1;
+            score = 0;
+            answered = false;
+            
+            // Ocultar todas las preguntas excepto la primera
+            quizQuestions.forEach((question, index) => {
+                if (index === 0) {
+                    question.style.display = 'block';
+                } else {
+                    question.style.display = 'none';
+                }
+            });
+            
+            // Resetear clases y texto
+            quizOptions.forEach(option => {
+                option.classList.remove('correct', 'incorrect');
+            });
+            
+            quizFeedback.textContent = '';
+            
+            // Ocultar botón de reinicio y mostrar navegación
+            restartButton.style.display = 'none';
+            document.querySelector('.quiz-navigation').style.display = 'flex';
+            
+            // Actualizar botones de navegación
+            updateNavigationButtons();
+        });
+        
+        // Función para actualizar estado de botones de navegación
+        function updateNavigationButtons() {
+            prevButton.disabled = currentQuestion === 1;
+            nextButton.disabled = !answered && currentQuestion !== quizQuestions.length;
+        }
+        
+        // Función para mostrar resultado final
+        function showFinalResult() {
+            // Ocultar todas las preguntas
+            quizQuestions.forEach(question => {
+                question.style.display = 'none';
+            });
+            
+            // Mostrar resultado
+            quizFeedback.innerHTML = `
+                <h3>¡Quiz completado!</h3>
+                <p>Tu puntuación: ${score} de ${quizQuestions.length}</p>
+                <p>${getScoreMessage(score, quizQuestions.length)}</p>
+            `;
+            quizFeedback.style.color = '#2e3192';
+            
+            // Ocultar navegación y mostrar botón de reinicio
+            document.querySelector('.quiz-navigation').style.display = 'none';
+            restartButton.style.display = 'block';
+        }
+        
+        // Función para obtener mensaje según puntuación
+        function getScoreMessage(score, total) {
+            const percentage = (score / total) * 100;
+            
+            if (percentage === 100) {
+                return '¡Perfecto! ¡Eres un experto en recolección de datos! 🌟';
+            } else if (percentage >= 75) {
+                return '¡Muy bien! Tienes un buen conocimiento sobre recolección de datos. 👍';
+            } else if (percentage >= 50) {
+                return 'Buen intento. Repasa un poco más los métodos de recolección. 📚';
+            } else {
+                return 'Sigue estudiando los métodos de recolección de datos. ¡Tú puedes! 💪';
+            }
+        }
+        
+        // Inicializar botones de navegación
+        updateNavigationButtons();
     });
-  </script>
+</script>
+  
 {% endblock %}
