@@ -1,0 +1,1010 @@
+{% extends "base.html" %}
+{% block title %}Leyes de Gestalt{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <!-- Decoraciones -->
+    <div class="decoration deco-1">👁️</div>
+    <div class="decoration deco-2">🎨</div>
+    <div class="decoration deco-3">🧩</div>
+    <div class="decoration deco-4">🔍</div>
+    
+    <!-- Encabezado -->
+    <header class="header">
+      <h1>¡Las Leyes de Gestalt!</h1>
+      <p>¡Descubre cómo tu cerebro organiza lo que ves!</p>
+    </header>
+    
+    <!-- Introducción -->
+    <section class="section">
+      <h2>¿Qué son las Leyes de Gestalt?</h2>
+      <p>Las Leyes de Gestalt son como <strong>reglas mágicas</strong> que explican cómo nuestro cerebro organiza las cosas que vemos. Nuestro cerebro no ve cada cosa por separado, ¡sino que agrupa todo para entender mejor!</p>
+      
+      <div class="intro-image-container">
+        <img src="https://heyjaime.com/wp-content/uploads/2022/10/teoria-de-la-gestalt-psicologia-percepcion-visual-01.png" alt="Ejemplo de Gestalt" class="intro-image">
+      </div>
+      
+      <p>Estas leyes nos ayudan a:</p>
+      <ul style="font-size: 1.2rem; margin-left: 30px; margin-bottom: 20px;">
+        <li>Entender cómo vemos el mundo</li>
+        <li>Crear dibujos e imágenes que se entiendan fácil</li>
+        <li>Diseñar juegos y páginas web divertidas</li>
+        <li>¡Y mucho más!</li>
+      </ul>
+    </section>
+    
+    <!-- Leyes principales -->
+    <section class="section">
+      <h2>Las 5 Leyes Principales</h2>
+      
+      <!-- Ley de Proximidad -->
+      <div class="law-box">
+        <div class="law-title">1. Ley de Proximidad</div>
+        <div class="law-content">
+          <div class="law-demo">
+            <div class="proximity-demo">
+              <div class="dot-group">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+              </div>
+              <div class="dot-group">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+              </div>
+            </div>
+          </div>
+          <div class="law-explanation">
+            <p>Las cosas que están <strong>cerca entre sí</strong> parecen formar un grupo.</p>
+            <p>¡Es como cuando tus amigos se sientan juntos en clase! Tu cerebro piensa que pertenecen al mismo equipo.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Ley de Similitud -->
+      <div class="law-box">
+        <div class="law-title">2. Ley de Similitud</div>
+        <div class="law-content">
+          <div class="law-demo">
+            <div class="similarity-demo">
+              <div class="square"></div><div class="circle"></div><div class="square"></div>
+              <div class="circle"></div><div class="square"></div><div class="circle"></div>
+              <div class="square"></div><div class="circle"></div><div class="square"></div>
+            </div>
+          </div>
+          <div class="law-explanation">
+            <p>Las cosas que se <strong>parecen</strong> parecen formar un grupo.</p>
+            <p>¡Como cuando ves muchos lápices rojos y azules! Tu cerebro agrupa automáticamente los del mismo color.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Ley de Cierre -->
+      <div class="law-box">
+        <div class="law-title">3. Ley de Cierre</div>
+        <div class="law-content">
+          <div class="law-demo">
+            <div class="closure-demo">
+              <div class="incomplete-circle"></div>
+              <div class="incomplete-square"></div>
+              <div class="incomplete-triangle"></div>
+            </div>
+          </div>
+          <div class="law-explanation">
+            <p>Tu cerebro <strong>completa las figuras incompletas</strong>.</p>
+            <p>¡Es como adivinar la palabra cuando faltan letras! Tu cerebro puede ver un círculo aunque no esté completo.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Ley de Continuidad -->
+      <div class="law-box">
+        <div class="law-title">4. Ley de Continuidad</div>
+        <div class="law-content">
+          <div class="law-demo">
+            <div class="continuity-demo">
+              <svg width="200" height="100" viewBox="0 0 200 100">
+                <path d="M10,50 Q75,10 100,50 T190,50" stroke="#ff6b6b" fill="transparent" stroke-width="4"/>
+                <path d="M10,50 Q75,90 100,50 T190,50" stroke="#5a67d8" fill="transparent" stroke-width="4"/>
+              </svg>
+            </div>
+          </div>
+          <div class="law-explanation">
+            <p>Tu cerebro sigue <strong>líneas y curvas de manera natural</strong>.</p>
+            <p>¡Como cuando sigues un camino! Tu vista naturalmente continúa a lo largo de una línea.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Ley de Figura y Fondo -->
+      <div class="law-box">
+        <div class="law-title">5. Ley de Figura y Fondo</div>
+        <div class="law-content">
+          <div class="law-demo">
+            <div class="figure-ground-demo"></div>
+          </div>
+          <div class="law-explanation">
+            <p>Tu cerebro distingue entre un <strong>objeto principal</strong> (figura) y su <strong>entorno</strong> (fondo).</p>
+            <p>¡Como cuando ves una estrella en el cielo! Puedes ver la estrella (figura) separada del cielo (fondo).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+
+
+
+</section>
+
+<!-- JUEGO: EL LABERINTO GESTALT -->
+<section class="section gestalt-game-section">
+  <div id="gestalt-game">
+    <div id="game-start" class="game-center">
+      <div class="game-character pulse">🕵️‍♂️</div>
+      <h2>¡El Laberinto Gestalt!</h2>
+      <p>Ayuda al detective a resolver los desafíos de las leyes de Gestalt y encuentra el tesoro.</p>
+      <button id="start-game-btn" class="game-btn">¡Comienza la aventura!</button>
+    </div>
+    <div id="game-levels" style="display:none;">
+      <div id="level-title"></div>
+      <div id="level-challenge"></div>
+      <div id="level-feedback"></div>
+      <button id="next-level-btn" class="game-btn" style="display:none;">Siguiente</button>
+    </div>
+    <div id="game-end" class="game-center" style="display:none;">
+      <div class="game-character pulse">🗝️</div>
+      <h2>¡Felicidades!</h2>
+      <p>¡Dominaste las leyes de Gestalt y encontraste el tesoro!</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .gestalt-game-section {
+    background: linear-gradient(135deg, #e0e7ff 0%, #ffe0f7 100%);
+    border: 3px solid #ffd200;
+    border-radius: 25px;
+    margin-bottom: 40px;
+    box-shadow: 0 6px 24px rgba(90,103,216,0.08);
+    padding: 30px 10px;
+    position: relative;
+    overflow: hidden;
+  }
+  .game-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .game-character {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    animation: bounce 2s infinite;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0);}
+    50% { transform: translateY(-15px);}
+  }
+  .game-btn {
+    background: #5a67d8;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 14px 32px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px #5a67d855;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .game-btn:hover {
+    background: #ff6b6b;
+    transform: scale(1.05);
+  }
+  .level-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: center;
+    margin: 25px 0;
+  }
+  .level-option {
+    background: #fff;
+    border: 3px solid #c7d2fe;
+    border-radius: 14px;
+    padding: 18px 28px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.2s, border 0.2s, transform 0.2s;
+    box-shadow: 0 2px 8px #ffd20022;
+    user-select: none;
+  }
+  .level-option.selected {
+    background: #e0ffe0;
+    border-color: #38b2ac;
+    transform: scale(1.08);
+  }
+  .level-option.correct {
+    background: #c6f6d5;
+    border-color: #38b2ac;
+    animation: correctPop 0.5s;
+  }
+  .level-option.incorrect {
+    background: #ffe0e0;
+    border-color: #ff6b6b;
+    animation: shake 0.4s;
+  }
+  @keyframes correctPop {
+    0% { transform: scale(1);}
+    60% { transform: scale(1.15);}
+    100% { transform: scale(1);}
+  }
+  @keyframes shake {
+    0%, 100% { transform: translateX(0);}
+    20%, 60% { transform: translateX(-8px);}
+    40%, 80% { transform: translateX(8px);}
+  }
+  .level-img {
+    max-width: 180px;
+    margin: 0 10px 10px 10px;
+    border-radius: 10px;
+    border: 2px solid #ffd200;
+    background: #fff;
+  }
+  .level-feedback {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 18px 0 0 0;
+    min-height: 32px;
+    text-align: center;
+  }
+</style>
+
+
+
+
+<script>
+  // --- Juego Laberinto Gestalt ---
+  const gestaltLevels = [
+    {
+      law: "Proximidad",
+      title: "Nivel 1: Ley de Proximidad",
+      challenge: "Agrupa los planetas cercanos para formar una constelación.",
+      type: "drag",
+      options: [
+        {id: 1, label: "🪐", group: "A"},
+        {id: 2, label: "🌎", group: "A"},
+        {id: 3, label: "🪐", group: "A"},
+        {id: 4, label: "🌑", group: "B"},
+        {id: 5, label: "🪐", group: "A"},
+        {id: 6, label: "🌑", group: "B"}
+      ],
+      correct: ["A"]
+    },
+    {
+      law: "Semejanza",
+      title: "Nivel 2: Ley de Semejanza",
+      challenge: "Selecciona todas las nubes con la misma forma.",
+      type: "select",
+      options: [
+        {id: 1, label: "☁️", group: "A"},
+        {id: 2, label: "🌥️", group: "B"},
+        {id: 3, label: "☁️", group: "A"},
+        {id: 4, label: "🌩️", group: "C"},
+        {id: 5, label: "☁️", group: "A"},
+        {id: 6, label: "🌥️", group: "B"}
+      ],
+      correct: [1,3,5]
+    },
+    {
+      law: "Cierre",
+      title: "Nivel 3: Ley de Cierre",
+      challenge: "Haz clic para completar la figura y formar un animal.",
+      type: "closure",
+      img: "https://juansanisidoro.wordpress.com/wp-content/uploads/2020/04/ley-de-cierre.jpg", // imagen de figura incompleta
+      correct: true
+    },
+    {
+      law: "Continuidad",
+      title: "Nivel 4: Ley de Continuidad",
+      challenge: "Sigue el hilo correcto hasta el ovillo.",
+      type: "path",
+      img: "https://static.vecteezy.com/system/resources/previews/002/933/608/non_2x/abstract-square-maze-game-for-kids-puzzle-for-children-find-the-right-path-labyrinth-conundrum-flat-illustration-isolated-on-white-background-free-vector.jpg", // imagen de caminos
+      correct: 2 // opción correcta
+    },
+    {
+      law: "Figura-Fondo",
+      title: "Nivel 5: Ley de Figura-Fondo",
+      challenge: "¿Qué ves en la imagen?",
+      type: "figure",
+      img: "https://uploads.toptal.io/blog/image/125753/toptal-blog-image-1522045559221-12e437d49472555fcc386865fbabd074.jpg", // imagen de ilusión pato/conejo
+      options: [
+        {id: 1, label: "Árbol"},
+        {id: 2, label: "Animales"}
+      ],
+      correct: [1, 2] // Ambas respuestas son válidas
+    },
+    {
+      law: "Simetría",
+      title: "Nivel 6: Ley de Simetría",
+      challenge: "Haz clic para completar la mariposa simétrica.",
+      type: "symmetry",
+      img: "https://www.xtal.iqfr.csic.es/Cristalografia/archivos_03/mariposa.gif", // imagen de mariposa mitad
+      correct: true
+    },
+    {
+      law: "Pregnancia",
+      title: "Nivel 7: Ley de Pregnancia",
+      challenge: "¿Cuál imagen es la más simple y reconocible?",
+      type: "pregnancia",
+      options: [
+        {id: 1, label: "❤️"},
+        {id: 2, label: "🌀"},
+        {id: 3, label: "🌈"}
+      ],
+      correct: 1
+    }
+  ];
+
+  let currentLevel = 0;
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const startBtn = document.getElementById('start-game-btn');
+    const gameStart = document.getElementById('game-start');
+    const gameLevels = document.getElementById('game-levels');
+    const gameEnd = document.getElementById('game-end');
+    const levelTitle = document.getElementById('level-title');
+    const levelChallenge = document.getElementById('level-challenge');
+    const levelFeedback = document.getElementById('level-feedback');
+    const nextBtn = document.getElementById('next-level-btn');
+
+    startBtn.addEventListener('click', () => {
+      gameStart.style.display = 'none';
+      gameLevels.style.display = 'block';
+      currentLevel = 0;
+      showLevel();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentLevel++;
+      if (currentLevel < gestaltLevels.length) {
+        showLevel();
+      } else {
+        gameLevels.style.display = 'none';
+        gameEnd.style.display = 'flex';
+      }
+    });
+
+    function showLevel() {
+      const level = gestaltLevels[currentLevel];
+      levelTitle.innerHTML = `<h3>${level.title}</h3><p>${level.challenge}</p>`;
+      levelChallenge.innerHTML = '';
+      levelFeedback.textContent = '';
+      nextBtn.style.display = 'none';
+
+      // Proximidad: arrastrar planetas al grupo
+      if (level.type === "drag") {
+        let dragged = null;
+        const groupA = document.createElement('div');
+        groupA.className = 'level-options';
+        groupA.style.minHeight = '60px';
+        groupA.style.border = '2px dashed #38b2ac';
+        groupA.style.background = '#e6fffa';
+        groupA.textContent = 'Arrastra aquí los planetas cercanos';
+        groupA.ondragover = e => { e.preventDefault(); groupA.style.background = '#b2f5ea'; };
+        groupA.ondragleave = e => { groupA.style.background = '#e6fffa'; };
+        groupA.ondrop = e => {
+          e.preventDefault();
+          if (dragged && dragged.dataset.group === 'A') {
+            groupA.appendChild(dragged);
+            dragged.draggable = false;
+            dragged.classList.add('selected');
+            checkDrag();
+          } else if (dragged) {
+            dragged.classList.add('incorrect');
+            setTimeout(() => dragged.classList.remove('incorrect'), 600);
+          }
+          groupA.style.background = '#e6fffa';
+        };
+        const pool = document.createElement('div');
+        pool.className = 'level-options';
+        level.options.forEach(opt => {
+          const el = document.createElement('div');
+          el.className = 'level-option';
+          el.textContent = opt.label;
+          el.setAttribute('draggable', true);
+          el.dataset.group = opt.group;
+          el.ondragstart = () => { dragged = el; };
+          pool.appendChild(el);
+        });
+        levelChallenge.appendChild(pool);
+        levelChallenge.appendChild(groupA);
+
+        function checkDrag() {
+          const selected = groupA.querySelectorAll('.level-option.selected').length;
+          if (selected === level.options.filter(o=>o.group==='A').length) {
+            levelFeedback.textContent = '¡Bien hecho! Agrupaste los planetas cercanos.';
+            levelFeedback.className = 'level-feedback';
+            nextBtn.style.display = 'inline-block';
+            playSuccess();
+          }
+        }
+      }
+
+      // Semejanza: seleccionar todas las nubes iguales
+      else if (level.type === "select") {
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'level-options';
+        level.options.forEach(opt => {
+          const el = document.createElement('div');
+          el.className = 'level-option';
+          el.textContent = opt.label;
+          el.onclick = () => {
+            el.classList.toggle('selected');
+            checkSelect();
+          };
+          optionsDiv.appendChild(el);
+        });
+        levelChallenge.appendChild(optionsDiv);
+
+        function checkSelect() {
+          const selected = Array.from(optionsDiv.children)
+            .map((el,i) => el.classList.contains('selected') ? i+1 : null)
+            .filter(Boolean);
+          if (selected.length === level.correct.length &&
+              selected.every(id => level.correct.includes(id))) {
+            Array.from(optionsDiv.children).forEach((el,i) => {
+              if (level.correct.includes(i+1)) el.classList.add('correct');
+            });
+            levelFeedback.textContent = '¡Correcto! Todas las nubes son iguales.';
+            levelFeedback.className = 'level-feedback';
+            nextBtn.style.display = 'inline-block';
+            playSuccess();
+          }
+        }
+      }
+
+      // Cierre: completar figura
+      else if (level.type === "closure") {
+        const img = document.createElement('img');
+        img.src = level.img;
+        img.className = 'level-img';
+        img.alt = 'Figura incompleta';
+        img.style.cursor = 'pointer';
+        img.onclick = () => {
+          img.style.filter = 'brightness(1.2) drop-shadow(0 0 10px #38b2ac)';
+          levelFeedback.textContent = '¡Completaste la figura!';
+          levelFeedback.className = 'level-feedback';
+          nextBtn.style.display = 'inline-block';
+          playSuccess();
+        };
+        levelChallenge.appendChild(img);
+      }
+
+      // Continuidad: seguir el camino correcto
+      else if (level.type === "path") {
+        const img = document.createElement('img');
+        img.src = level.img;
+        img.className = 'level-img';
+        img.alt = 'Caminos';
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'level-options';
+        [1,2,3].forEach(n => {
+          const btn = document.createElement('div');
+          btn.className = 'level-option';
+          btn.textContent = `Camino ${n}`;
+          btn.onclick = () => {
+            if (n === level.correct) {
+              btn.classList.add('correct');
+              levelFeedback.textContent = '¡Seguiste el camino correcto!';
+              levelFeedback.className = 'level-feedback';
+              nextBtn.style.display = 'inline-block';
+              playSuccess();
+            } else {
+              btn.classList.add('incorrect');
+              levelFeedback.textContent = 'Intenta de nuevo.';
+              playError();
+              setTimeout(() => btn.classList.remove('incorrect'), 700);
+            }
+          };
+          optionsDiv.appendChild(btn);
+        });
+        levelChallenge.appendChild(img);
+        levelChallenge.appendChild(optionsDiv);
+      }
+
+      // Figura-Fondo: elegir qué ves en la imagen
+      else if (level.type === "figure") {
+        const img = document.createElement('img');
+        img.src = level.img;
+        img.className = 'level-img';
+        img.alt = 'Figura-Fondo';
+        
+        const question = document.createElement('p');
+        question.textContent = '¿Qué ves en la imagen?';
+        question.style.fontWeight = 'bold';
+        question.style.margin = '15px 0';
+        
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'level-options';
+        
+        level.options.forEach(opt => {
+          const btn = document.createElement('div');
+          btn.className = 'level-option';
+          btn.textContent = opt.label;
+          btn.onclick = () => {
+            if (level.correct.includes(opt.id)) {
+              btn.classList.add('correct');
+              levelFeedback.textContent = `¡Correcto! Efectivamente puedes ver ${opt.label.toLowerCase()}.`;
+              levelFeedback.className = 'level-feedback';
+              nextBtn.style.display = 'inline-block';
+              playSuccess();
+            } else {
+              btn.classList.add('incorrect');
+              levelFeedback.textContent = 'Intenta de nuevo.';
+              playError();
+              setTimeout(() => btn.classList.remove('incorrect'), 700);
+            }
+          };
+          optionsDiv.appendChild(btn);
+        });
+        
+        levelChallenge.appendChild(img);
+        levelChallenge.appendChild(question);
+        levelChallenge.appendChild(optionsDiv);
+      }
+
+      // Simetría: completar la mariposa
+      else if (level.type === "symmetry") {
+        const img = document.createElement('img');
+        img.src = level.img;
+        img.className = 'level-img';
+        img.alt = 'Simetría';
+        img.style.cursor = 'pointer';
+        img.onclick = () => {
+          img.style.filter = 'brightness(1.2) drop-shadow(0 0 10px #ffd200)';
+          levelFeedback.textContent = '¡Completaste la mariposa simétrica!';
+          levelFeedback.className = 'level-feedback';
+          nextBtn.style.display = 'inline-block';
+          playSuccess();
+        };
+        levelChallenge.appendChild(img);
+      }
+
+      // Pregnancia: elegir la imagen más simple
+      else if (level.type === "pregnancia") {
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'level-options';
+        level.options.forEach(opt => {
+          const el = document.createElement('div');
+          el.className = 'level-option';
+          el.textContent = opt.label;
+          el.onclick = () => {
+            if (opt.id === level.correct) {
+              el.classList.add('correct');
+              levelFeedback.textContent = '¡Muy bien! Elegiste la imagen más simple.';
+              levelFeedback.className = 'level-feedback';
+              nextBtn.style.display = 'inline-block';
+              playSuccess();
+            } else {
+              el.classList.add('incorrect');
+              levelFeedback.textContent = 'Intenta de nuevo.';
+              playError();
+              setTimeout(() => el.classList.remove('incorrect'), 700);
+            }
+          };
+          optionsDiv.appendChild(el);
+        });
+        levelChallenge.appendChild(optionsDiv);
+      }
+    }
+
+    // Sonidos de feedback
+    function playSuccess() {
+      const audio = new Audio('https://cdn.pixabay.com/audio/2022/07/26/audio_124bfa4c8b.mp3');
+      audio.volume = 0.3;
+      audio.play();
+    }
+    function playError() {
+      const audio = new Audio('https://cdn.pixabay.com/audio/2022/07/26/audio_124bfa4c8b.mp3');
+      audio.volume = 0.1;
+      audio.playbackRate = 0.7;
+      audio.play();
+    }
+  });
+</script>
+
+<style>
+  /* ESTILOS GENERALES */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+  }
+  
+  body {
+    background-color: #f2f7ff;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1, h2, h3, h4 {
+    color: #2e3192;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    margin-top: 30px;
+    text-shadow: 2px 2px 0px #ffd200;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    color: #ff6b6b;
+  }
+  
+  h3 {
+    font-size: 2rem;
+    color: #eaeaea;
+    margin-top: 25px;
+  }
+  
+  h4 {
+    font-size: 1.5rem;
+    color: #38b2ac;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+
+  /* ENCABEZADO */
+  .header {
+    background-color: #5a67d8;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    border: 5px solid #ffd200;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .header h1 {
+    color: white;
+    font-size: 3.5rem;
+    text-shadow: 3px 3px 0px #ff6b6b;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .header p {
+    font-size: 1.5rem;
+    color: #ffd200;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .header::before {
+    content: "👁️";
+    position: absolute;
+    font-size: 10rem;
+    opacity: 0.1;
+    top: -20px;
+    right: 30px;
+    transform: rotate(15deg);
+  }
+  
+  .header::after {
+    content: "👁️";
+    position: absolute;
+    font-size: 10rem;
+    opacity: 0.1;
+    bottom: -40px;
+    left: 30px;
+    transform: rotate(-15deg);
+  }
+
+  /* SECCIONES INFORMATIVAS */
+  .section {
+    background-color: white;
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 40px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 3px solid #c7d2fe;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(90deg, #ffd200, #ff6b6b, #5a67d8, #38b2ac);
+  }
+  
+  .intro-image {
+    display: block;
+    width: 80%;
+    max-width: 400px;
+    margin: 20px auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    border: 3px solid #ffd200;
+  }
+
+  /* LEY BOXES */
+  .law-box {
+    display: flex;
+    flex-direction: column;
+    background-color: #f8fafc;
+    border-radius: 15px;
+    margin: 20px 0;
+    overflow: hidden;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+    border: 2px dashed #c7d2fe;
+    transition: all 0.3s ease;
+  }
+  
+  .law-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    border: 2px solid #5a67d8;
+  }
+  
+  .law-title {
+    background-color: #5a67d8;
+    color: white;
+    padding: 10px;
+    font-size: 1.8rem;
+    text-align: center;
+    text-shadow: 1px 1px 0px #2e3192;
+  }
+  
+  .law-content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .law-demo {
+    flex: 1;
+    min-width: 300px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    position: relative;
+    border: 2px solid #e2e8f0;
+  }
+  
+  .law-explanation {
+    flex: 1;
+    min-width: 300px;
+    font-size: 1.1rem;
+  }
+  
+  /* Estilos específicos para cada demo */
+  .proximity-demo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .dot-group {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .dot {
+    width: 20px;
+    height: 20px;
+    background-color: #5a67d8;
+    border-radius: 50%;
+  }
+  
+  .similarity-demo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+  }
+  
+  .circle {
+    width: 40px;
+    height: 40px;
+    background-color: #ff6b6b;
+    border-radius: 50%;
+  }
+  
+  .square {
+    width: 40px;
+    height: 40px;
+    background-color: #38b2ac;
+  }
+  
+  .closure-demo {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+  
+  .incomplete-circle {
+    width: 60px;
+    height: 60px;
+    border: 5px solid #ff6b6b;
+    border-radius: 50%;
+    border-right: 5px solid transparent;
+  }
+  
+  .incomplete-square {
+    width: 60px;
+    height: 60px;
+    border: 5px solid #38b2ac;
+    border-bottom: 5px solid transparent;
+  }
+  
+  .incomplete-triangle {
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 60px solid #ffd200;
+    position: relative;
+  }
+  
+  .incomplete-triangle::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: -20px;
+    width: 40px;
+    height: 30px;
+    background-color: white;
+    transform: rotate(45deg);
+  }
+  
+  .continuity-demo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .figure-ground-demo {
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><circle cx="100" cy="100" r="50" fill="black"/><rect x="75" y="75" width="50" height="50" fill="white"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+    }
+    
+    h2 {
+      font-size: 2rem;
+    }
+    
+    h3 {
+      font-size: 1.8rem;
+    }
+    
+    .law-content {
+      flex-direction: column;
+    }
+    
+    .law-demo, .law-explanation {
+      min-width: 100%;
+    }
+    
+    .activities-container {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* DETALLES DECORATIVOS */
+  .decoration {
+    position: absolute;
+    z-index: -1;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  
+  .deco-1 {
+    top: 10%;
+    left: 5%;
+    font-size: 3rem;
+    color: #ffd200;
+    transform: rotate(-15deg);
+  }
+  
+  .deco-2 {
+    top: 30%;
+    right: 5%;
+    font-size: 4rem;
+    color: #ff6b6b;
+    transform: rotate(25deg);
+  }
+  
+  .deco-3 {
+    bottom: 20%;
+    left: 8%;
+    font-size: 3.5rem;
+    color: #38b2ac;
+    transform: rotate(10deg);
+  }
+  
+  .deco-4 {
+    bottom: 15%;
+    right: 8%;
+    font-size: 2.8rem;
+    color: #5a67d8;
+    transform: rotate(-20deg);
+  }
+  
+  /* ANIMACIONES */
+  @keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+  }
+  
+  .float {
+    animation: float 4s ease-in-out infinite;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  .pulse {
+    animation: pulse 2s ease-in-out infinite;
+  }
+  
+  /* Estilo para el pie de página */
+  footer {
+    color: white !important;
+  }
+  
+  footer a {
+    color: white !important;
+  }
+</style>
+{% endblock %}

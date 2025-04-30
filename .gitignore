@@ -1,0 +1,4 @@
+instance/
+usuarios.db
+venv/
+pagina_didactica/app.py
