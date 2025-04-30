@@ -2,42 +2,118 @@
 {% block title %}Principios de Nielsen{% endblock %}
  
 {% block content %}
-  <div class="container">
-    <!-- Decoraciones -->
-    <div class="decoration deco-1">🔍</div>
-    <div class="decoration deco-2">💡</div>
-    <div class="decoration deco-3">🖥️</div>
-    <div class="decoration deco-4">📱</div>
-    
-    <!-- Encabezado -->
-    <header class="header">
-      <h1>¡Principios de Nielsen!</h1>
-      <p>¡Descubre cómo hacer interfaces fáciles de usar para todos!</p>
-    </header>
-    
-    <!-- Introducción -->
-    <section class="section">
-      <h2>¿Qué son los Principios de Nielsen?</h2>
-      <p>Los Principios de Nielsen son como <strong>reglas mágicas</strong> que nos ayudan a crear programas y páginas web que sean fáciles de usar. ¡Fueron creados por Jakob Nielsen, un experto en hacer que la tecnología sea amigable para todos!</p>
-      
-      <div class="intro-image-container">
-        <img src="https://miro.medium.com/v2/resize:fit:800/1*FKk-PVDpOvePXWB7frLnDg.png">
-      </div>
-      
-      <p>Estos principios nos ayudan a:</p>
-      <ul style="font-size: 1.2rem; margin-left: 30px; margin-bottom: 20px;">
-        <li>Crear programas que sean fáciles de entender</li>
-        <li>Evitar que los usuarios se confundan</li>
-        <li>Hacer que usar la tecnología sea divertido</li>
-        <li>¡Y mucho más!</li>
-      </ul>
-    </section>
-    
-    <!-- Principios principales -->
-    <section class="section">
-      <h2>Los 10 Principios de Nielsen</h2>
-      
-      <div class="principles-container">
+<div class="container">
+  <!-- Decoraciones -->
+  <div class="decoration deco-1">🔍</div>
+  <div class="decoration deco-2">💡</div>
+  <div class="decoration deco-3">🖥️</div>
+  <div class="decoration deco-4">📱</div>
+ 
+
+  <!-- Encabezado mejorado con burbujas y carritos -->
+  <header class="header nielsen-header">
+    <div class="nielsen-bubbles">
+      <span class="bubble" style="top: 10px; left: 30px;"></span>
+      <span class="bubble" style="top: 60px; left: 120px;"></span>
+      <span class="bubble" style="top: 40px; right: 80px;"></span>
+      <span class="bubble" style="top: 90px; right: 30px;"></span>
+      <span class="bubble" style="bottom: 20px; left: 80px;"></span>
+      <span class="bubble" style="bottom: 30px; right: 60px;"></span>
+      <!-- Carritos decorativos usando emojis o imágenes SVG -->
+      <span class="car" style="bottom: 10px; left: 40px;">🚗</span>
+      <span class="car" style="top: 20px; right: 40px;">🚙</span>
+    </div>
+    <h1>¡Principios de Nielsen!</h1>
+    <p>¡Descubre cómo hacer interfaces fáciles de usar para todos!</p>
+  </header>
+
+  <style>
+    .nielsen-header {
+      position: relative;
+      background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px 50px 20px;
+      border-radius: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(67, 233, 123, 0.18);
+      overflow: hidden;
+      font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
+    }
+    .nielsen-header h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 8px #1b5e2044;
+    }
+    .nielsen-header p {
+      font-size: 1.3rem;
+      margin-bottom: 0;
+      text-shadow: 0 1px 4px #1b5e2033;
+    }
+    .nielsen-bubbles {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .bubble {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.25);
+      border-radius: 50%;
+      box-shadow: 0 2px 12px rgba(67, 233, 123, 0.15);
+      animation: float-bubble 6s infinite ease-in-out alternate;
+    }
+    .bubble:nth-child(2) { width: 25px; height: 25px; animation-delay: 1s;}
+    .bubble:nth-child(3) { width: 30px; height: 30px; animation-delay: 2s;}
+    .bubble:nth-child(4) { width: 20px; height: 20px; animation-delay: 3s;}
+    .bubble:nth-child(5) { width: 35px; height: 35px; animation-delay: 4s;}
+    .bubble:nth-child(6) { width: 18px; height: 18px; animation-delay: 2.5s;}
+    @keyframes float-bubble {
+      0% { transform: translateY(0) scale(1);}
+      100% { transform: translateY(-20px) scale(1.1);}
+    }
+    .car {
+      position: absolute;
+      font-size: 2.2rem;
+      filter: drop-shadow(0 2px 6px #1b5e2022);
+      animation: drive-car 8s linear infinite;
+    }
+    .car:nth-child(7) { animation-delay: 0s;}
+    .car:nth-child(8) { animation-delay: 4s;}
+    @keyframes drive-car {
+      0% { transform: translateX(0);}
+      100% { transform: translateX(60px);}
+    }
+  </style>
+
+ 
+  <!-- Introducción -->
+  <section class="section">
+    <h2>¿Qué son los Principios de Nielsen?</h2>
+    <p>Los Principios de Nielsen son como <strong>reglas mágicas</strong> que nos ayudan a crear programas y páginas web que sean fáciles de usar. ¡Fueron creados por Jakob Nielsen, un experto en hacer que la tecnología sea amigable para todos!</p>
+   
+    <div class="intro-image-container">
+      <img src="https://miro.medium.com/v2/resize:fit:800/1*FKk-PVDpOvePXWB7frLnDg.png">
+    </div>
+   
+    <p>Estos principios nos ayudan a:</p>
+    <ul style="font-size: 1.2rem; margin-left: 30px; margin-bottom: 20px;">
+      <li>Crear programas que sean fáciles de entender</li>
+      <li>Evitar que los usuarios se confundan</li>
+      <li>Hacer que usar la tecnología sea divertido</li>
+      <li>¡Y mucho más!</li>
+    </ul>
+  </section>
+ 
+  <!-- Principios principales -->
+  <section class="section">
+    <h2>Los 10 Principios de Nielsen</h2>
+   
+    <div class="principles-container">
         <!-- Principio 1 -->
         <div class="principle-card">
           <div class="card-header">Principio 1</div>
@@ -45,16 +121,16 @@
             <h3 class="principle-title">Visibilidad del estado del sistema</h3>
             <img src="https://media.giphy.com/media/3o7TKSjRrfIPjeiVyM/giphy.gif" alt="Barra de progreso" class="principle-gif">
             <p>El sistema debe siempre informarte qué está pasando.</p>
-            
+           
             <h4 class="game-title">Juego: ¿Dónde está mi tesoro?</h4>
             <p class="game-instructions">Un niño esconde un "tesoro" y otro lo busca. Los demás niños dicen "frío", "tibio" o "caliente" según se acerque o aleje.</p>
-            
+           
             <div class="game-interaction">
               <p><strong>Aprendizaje:</strong> Es importante recibir información constante para saber cómo vamos.</p>
             </div>
           </div>
         </div>
-        
+       
         <!-- Principio 2 -->
         <div class="principle-card">
           <div class="card-header">Principio 2</div>
@@ -62,16 +138,16 @@
             <h3 class="principle-title">Relación con el mundo real</h3>
             <img src="https://media.giphy.com/media/l0HlQXlQ3nHyLMvte/giphy.gif" alt="Iconos familiares" class="principle-gif">
             <p>Las aplicaciones usan símbolos que ya conocemos en la vida real.</p>
-            
+           
             <h4 class="game-title">Juego: El traductor</h4>
             <p class="game-instructions">Relaciona símbolos del ordenador con objetos del mundo real (como un disquete con una caja para guardar cosas).</p>
-            
+           
             <div class="game-interaction">
               <p><strong>Aprendizaje:</strong> Los buenos diseños se parecen a cosas que ya conocemos.</p>
             </div>
           </div>
         </div>
-        
+       
         <!-- Principio 3 -->
         <div class="principle-card">
           <div class="card-header">Principio 3</div>
@@ -79,16 +155,16 @@
             <h3 class="principle-title">Control y libertad del usuario</h3>
             <img src="https://i.gifer.com/origin/13/134bf3ab348e5389e176ac8de56da832_w200.gif" alt="Botón de deshacer" class="principle-gif">
             <p>Cuando nos equivocamos, necesitamos poder volver atrás.</p>
-            
+           
             <h4 class="game-title">Juego: El camino de vuelta</h4>
             <p class="game-instructions">Sigue un camino con obstáculos usando 3 "pases de deshacer" para corregir movimientos incorrectos.</p>
-            
+           
             <div class="game-interaction">
               <p><strong>Aprendizaje:</strong> Es importante poder corregir nuestros errores fácilmente.</p>
             </div>
           </div>
         </div>
-        
+       
         <!-- Principio 4 -->
         <div class="principle-card">
           <div class="card-header">Principio 4</div>
@@ -96,16 +172,16 @@
             <h3 class="principle-title">Consistencia y estándares</h3>
             <img src="https://media.giphy.com/media/3oKIPuMqYfRsyJTWfu/giphy.gif" alt="Patrones consistentes" class="principle-gif">
             <p>Las cosas parecidas deben funcionar de manera parecida.</p>
-            
+           
             <h4 class="game-title">Juego: ¿Dónde está el intruso?</h4>
             <p class="game-instructions">Identifica cuál objeto no sigue el mismo patrón que los demás en un grupo.</p>
-            
+           
             <div class="game-interaction">
               <p><strong>Aprendizaje:</strong> Las cosas consistentes son más fáciles de usar y entender.</p>
             </div>
           </div>
         </div>
-        
+       
         <!-- Principio 5 -->
         <div class="principle-card">
           <div class="card-header">Principio 5</div>
@@ -113,16 +189,16 @@
             <h3 class="principle-title">Prevención de errores</h3>
             <img src="https://i.pinimg.com/originals/ef/8b/bd/ef8bbd4554dedcc2fd1fd15ab0ebd7a1.gif" alt="Prevención de errores" class="principle-gif">
             <p>Es mejor evitar los errores antes de que ocurran.</p>
-            
+           
             <h4 class="game-title">Juego: Campo minado de papel</h4>
             <p class="game-instructions">Traza un camino seguro en un tablero evitando "minas" explicando por qué cada paso es seguro.</p>
-            
+           
             <div class="game-interaction">
               <p><strong>Aprendizaje:</strong> Pensar antes de actuar nos ayuda a evitar errores.</p>
             </div>
           </div>
         </div>
-        
+       
         <!-- Principio 6 -->
         <div class="principle-card">
           <div class="card-header">Principio 6</div>
@@ -130,16 +206,16 @@
             <h3 class="principle-title">Reconocer mejor que recordar</h3>
             <img src="https://media.giphy.com/media/3o7TKSha51ATTx9KzC/giphy.gif" alt="Menú visible" class="principle-gif">
             <p>Es más fácil elegir entre opciones visibles que recordar de memoria.</p>
-            
+           
             <h4 class="game-title">Juego: Memoria visible</h4>
             <p class="game-instructions">Juega al juego de memoria pero con las cartas parcialmente visibles.</p>
-            
+           
             <div class="game-interaction">
               <p><strong>Aprendizaje:</strong> Ver las opciones es más fácil que tener que recordarlas.</p>
             </div>
           </div>
         </div>
-        
+       
         <!-- Principio 7 -->
         <div class="principle-card">
           <div class="card-header">Principio 7</div>
@@ -147,16 +223,16 @@
             <h3 class="principle-title">Flexibilidad y eficiencia de uso</h3>
             <img src="https://media.giphy.com/media/l0HlQoLBg7MOSmwHC/giphy.gif" alt="Atajos de teclado" class="principle-gif">
             <p>Las aplicaciones deben ser fáciles para principiantes pero también rápidas para expertos.</p>
-            
+           
             <h4 class="game-title">Juego: Carrera de instrucciones</h4>
             <p class="game-instructions">Completa una tarea eligiendo entre instrucciones básicas o "atajos" más avanzados que combinan varios pasos.</p>
-            
+           
             <div class="game-interaction">
               <p><strong>Aprendizaje:</strong> Las buenas aplicaciones funcionan bien tanto para principiantes como para expertos.</p>
             </div>
           </div>
         </div>
-        
+       
         <!-- Principio 8 -->
         <div class="principle-card">
           <div class="card-header">Principio 8</div>
@@ -164,16 +240,16 @@
             <h3 class="principle-title">Estética y diseño minimalista</h3>
             <img src="https://i.gifer.com/origin/86/864bcc8f71e5d357c16791e2ef923d26_w200.gif" alt="Diseño minimalista" class="principle-gif">
             <p>Las pantallas no deben estar llenas de cosas innecesarias.</p>
-            
+           
             <h4 class="game-title">Juego: El detective de lo importante</h4>
             <p class="game-instructions">Identifica solo los elementos importantes en un dibujo lleno de detalles y crea una versión simplificada.</p>
-            
+           
             <div class="game-interaction">
               <p><strong>Aprendizaje:</strong> Menos es más - lo simple es más fácil de entender.</p>
             </div>
           </div>
         </div>
-        
+       
         <!-- Principio 9 -->
         <div class="principle-card">
           <div class="card-header">Principio 9</div>
@@ -181,16 +257,16 @@
             <h3 class="principle-title">Ayuda con los errores</h3>
             <img src="https://media.giphy.com/media/xT9IgIc0lryrxvqVGM/giphy.gif" alt="Mensaje de error útil" class="principle-gif">
             <p>Cuando cometemos un error, la aplicación debe ayudarnos a entenderlo y arreglarlo.</p>
-            
+           
             <h4 class="game-title">Juego: Doctor de robots</h4>
             <p class="game-instructions">Crea un "robot" con un problema y escribe instrucciones claras para que otros niños lo arreglen.</p>
-            
+           
             <div class="game-interaction">
               <p><strong>Aprendizaje:</strong> Los mensajes de error deben ser claros y útiles.</p>
             </div>
           </div>
         </div>
-        
+       
         <!-- Principio 10 -->
         <div class="principle-card">
           <div class="card-header">Principio 10</div>
@@ -200,10 +276,10 @@
                 <img src="https://vivacopier.es/wp-content/uploads/webdevelopment10.gif" alt="Manual de instrucciones" class="principle-gif">
             </div>
             <p>A veces necesitamos instrucciones para entender cómo usar algo.</p>
-            
+           
             <h4 class="game-title">Juego: Los guías turísticos</h4>
             <p class="game-instructions">Crea un juego simple y escribe un manual para que otros niños aprendan a jugarlo.</p>
-            
+           
             <div class="game-interaction">
               <p><strong>Aprendizaje:</strong> Aunque algo sea fácil de usar, siempre es bueno tener instrucciones.</p>
             </div>
@@ -211,84 +287,662 @@
         </div>
       </div>
     </section>
-    
-    <!-- Sección de Quiz -->
-    <section class="section quiz-section">
-      <h2>¿Cuánto has aprendido? ¡Pon a prueba tus conocimientos!</h2>
-      
-      <div class="quiz-container">
-        <div class="progress-container">
-          <div class="progress-bar" id="quiz-progress">0%</div>
-        </div>
-        
-        <div class="score-display">
-          Puntuación: <span id="quiz-score">0</span> / <span id="quiz-total">2</span>
-        </div>
-        
-        <div class="quiz-item">
-          <p class="quiz-question">1. Si un juego te muestra una barra que indica cuánto falta para completar un nivel, ¿qué principio está usando?</p>
-          <div class="quiz-options">
-            <div class="quiz-option" data-correct="true">A) Visibilidad del estado del sistema</div>
-            <div class="quiz-option" data-correct="false">B) Prevención de errores</div>
-            <div class="quiz-option" data-correct="false">C) Ayuda y documentación</div>
-          </div>
-          <div class="quiz-feedback" id="feedback-1"></div>
-        </div>
-        
-        <div class="quiz-item">
-          <p class="quiz-question">2. ¿Qué principio dice que es mejor ver las opciones que tener que recordarlas?</p>
-          <div class="quiz-options">
-            <div class="quiz-option" data-correct="false">A) Control y libertad del usuario</div>
-            <div class="quiz-option" data-correct="true">B) Reconocer mejor que recordar</div>
-            <div class="quiz-option" data-correct="false">C) Consistencia y estándares</div>
-          </div>
-          <div class="quiz-feedback" id="feedback-2"></div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Sección de Juego de Emparejar -->
-    <section class="section match-section">
-      <h2>¡Juego de emparejar! Une cada problema con el principio correcto</h2>
-      
-      <div class="match-container">
-        <div class="progress-container">
-          <div class="progress-bar" id="match-progress">0%</div>
-        </div>
-        
-        <div class="score-display">
-          Parejas correctas: <span id="match-score">0</span> / <span id="match-total">4</span>
-        </div>
-        
-        <div class="match-game">
-          <div class="match-column">
-            <h3>Problemas</h3>
-            <div class="match-drop-zone" id="problems-zone">
-              <div class="match-item problem" data-match="1" draggable="true">No sé si mi mensaje se envió</div>
-              <div class="match-item problem" data-match="2" draggable="true">No entiendo qué significa este símbolo</div>
-              <div class="match-item problem" data-match="3" draggable="true">Me equivoqué pero no puedo cancelar</div>
-              <div class="match-item problem" data-match="8" draggable="true">Hay demasiada información en la pantalla</div>
-            </div>
-          </div>
-          
-          <div class="match-column">
-            <h3>Principios</h3>
-            <div class="match-drop-zone" id="principles-zone">
-              <div class="match-item principle" data-match="1" draggable="true">Principio 1: Visibilidad</div>
-              <div class="match-item principle" data-match="2" draggable="true">Principio 2: Relación con el mundo real</div>
-              <div class="match-item principle" data-match="3" draggable="true">Principio 3: Control y libertad</div>
-              <div class="match-item principle" data-match="8" draggable="true">Principio 8: Diseño minimalista</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <div class="celebration" id="celebration"></div>
-    
-    <button class="reset-button" id="reset-games">Reiniciar juegos</button>
-  </div>
+   
   
+   
+    <!-- Sección de Juego de Ahorcado -->
+    <section class="section hangman-section">
+      <h2>¡Juego del Ahorcado de Nielsen!</h2>
+      <p>Adivina palabras relacionadas con los Principios de Nielsen. ¡Cada letra correcta te acerca a la victoria!</p>
+      
+      <div class="hangman-container">
+        <div class="hangman-drawing">
+          <canvas id="hangman-canvas" width="200" height="200"></canvas>
+        </div>
+        
+        <div class="hangman-word-container">
+          <div id="hangman-word" class="hangman-word"></div>
+          <p class="hangman-hint">Pista: <span id="hangman-hint-text">Cargando...</span></p>
+        </div>
+        
+        <div class="hangman-controls">
+          <div class="hangman-letters" id="hangman-letters"></div>
+          <div class="hangman-message" id="hangman-message"></div>
+          <button id="hangman-restart" class="hangman-button">¡Jugar de nuevo!</button>
+        </div>
+      </div>
+    </section>
+    
+
+ <!-- Sección de Quiz -->
+ <section class="section quiz-section">
+  <h2>¿Cuánto has aprendido? ¡Pon a prueba tus conocimientos!</h2>
+ 
+  <div class="quiz-container">
+    <div class="progress-container">
+      <div class="progress-bar" id="quiz-progress">0%</div>
+    </div>
+   
+    <div class="score-display">
+      Puntuación: <span id="quiz-score">0</span> / <span id="quiz-total">2</span>
+    </div>
+   
+    <div class="quiz-item">
+      <p class="quiz-question">1. Si un juego te muestra una barra que indica cuánto falta para completar un nivel, ¿qué principio está usando?</p>
+      <div class="quiz-options">
+        <div class="quiz-option" data-correct="true">A) Visibilidad del estado del sistema</div>
+        <div class="quiz-option" data-correct="false">B) Prevención de errores</div>
+        <div class="quiz-option" data-correct="false">C) Ayuda y documentación</div>
+      </div>
+      <div class="quiz-feedback" id="feedback-1"></div>
+    </div>
+   
+    <div class="quiz-item">
+      <p class="quiz-question">2. ¿Qué principio dice que es mejor ver las opciones que tener que recordarlas?</p>
+      <div class="quiz-options">
+        <div class="quiz-option" data-correct="false">A) Control y libertad del usuario</div>
+        <div class="quiz-option" data-correct="true">B) Reconocer mejor que recordar</div>
+        <div class="quiz-option" data-correct="false">C) Consistencia y estándares</div>
+      </div>
+      <div class="quiz-feedback" id="feedback-2"></div>
+    </div>
+  </div>
+</section>
+<script>
+  // Script para funcionalidad del quiz
+  document.addEventListener('DOMContentLoaded', function() {
+    let quizScore = 0;
+    const quizTotal = 2;
+    document.getElementById('quiz-total').textContent = quizTotal;
+    const quizOptions = document.querySelectorAll('.quiz-option');
+    quizOptions.forEach(option => {
+      option.addEventListener('click', function() {
+        // Evita seleccionar más de una vez
+        if (this.classList.contains('correct') || this.classList.contains('incorrect')) return;
+        const parent = this.closest('.quiz-item');
+        const feedback = parent.querySelector('.quiz-feedback');
+        const options = parent.querySelectorAll('.quiz-option');
+        // Deshabilita todas las opciones de la pregunta
+        options.forEach(opt => opt.style.pointerEvents = 'none');
+        if (this.dataset.correct === 'true') {
+          this.classList.add('correct');
+          feedback.textContent = '¡Correcto!';
+          feedback.style.display = 'block';
+          feedback.style.color = '#4CAF50';
+          quizScore++;
+          document.getElementById('quiz-score').textContent = quizScore;
+        } else {
+          this.classList.add('incorrect');
+          feedback.textContent = 'Incorrecto. Intenta de nuevo.';
+          feedback.style.display = 'block';
+          feedback.style.color = '#F44336';
+          // Resalta la opción correcta
+          options.forEach(opt => {
+            if (opt.dataset.correct === 'true') {
+              opt.classList.add('correct');
+            }
+          });
+        }
+        // Actualiza la barra de progreso
+        const answered = document.querySelectorAll('.quiz-option.correct, .quiz-option.incorrect').length / 3;
+        const progress = Math.round((quizScore / quizTotal) * 100);
+        document.getElementById('quiz-progress').style.width = progress + '%';
+        document.getElementById('quiz-progress').textContent = progress + '%';
+      });
+    });
+  });
+</script>
+    <style>
+      /* Estilos para el juego de ahorcado */
+      .hangman-section {
+        background-color: #fff9c4;
+        border-radius: 20px;
+        padding: 25px;
+        margin-top: 40px;
+        box-shadow: 0 8px 25px rgba(255, 193, 7, 0.2);
+      }
+      
+      .hangman-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background: linear-gradient(135deg, #fffde7 0%, #fff9c4 100%);
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(255, 193, 7, 0.15);
+      }
+      
+      .hangman-drawing {
+        margin-bottom: 15px;
+      }
+      
+      .hangman-word {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+      }
+      
+      .hangman-letter {
+        width: 40px;
+        height: 40px;
+        border-bottom: 3px solid #ffc107;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #5d4037;
+        text-transform: uppercase;
+      }
+      
+      .hangman-hint {
+        font-size: 1.2rem;
+        color: #5d4037;
+        text-align: center;
+        margin: 15px 0;
+        font-style: italic;
+      }
+      
+      .hangman-letters {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        margin-bottom: 20px;
+      }
+      
+      .letter-button {
+        width: 35px;
+        height: 35px;
+        border: none;
+        border-radius: 50%;
+        background-color: #ffeb3b;
+        color: #5d4037;
+        font-size: 1.2rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      }
+      
+      .letter-button:hover {
+        background-color: #ffd54f;
+        transform: scale(1.1);
+      }
+      
+      .letter-button.used {
+        background-color: #e0e0e0;
+        color: #9e9e9e;
+        cursor: not-allowed;
+        transform: scale(0.9);
+      }
+      
+      .letter-button.correct {
+        background-color: #aed581;
+        color: #33691e;
+      }
+      
+      .letter-button.wrong {
+        background-color: #ef9a9a;
+        color: #b71c1c;
+      }
+      
+      .hangman-message {
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: center;
+        margin: 15px 0;
+        min-height: 50px;
+        color: #5d4037;
+      }
+      
+      .hangman-button {
+        padding: 12px 25px;
+        background-color: #ffc107;
+        color: #5d4037;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        display: none;
+      }
+      
+      .hangman-button:hover {
+        background-color: #ffb300;
+        transform: scale(1.05);
+      }
+      
+      @media (min-width: 768px) {
+        .hangman-container {
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+        
+        .hangman-drawing {
+          flex: 0 0 200px;
+        }
+        
+        .hangman-word-container {
+          flex: 1 1 300px;
+        }
+        
+        .hangman-controls {
+          flex: 0 0 100%;
+        }
+      }
+    </style>
+    
+    <script>
+      // Script para el juego de ahorcado
+      document.addEventListener('DOMContentLoaded', function() {
+        // Palabras y pistas relacionadas con los Principios de Nielsen
+        const palabras = [
+          { palabra: "VISIBILIDAD", pista: "El sistema debe informarte qué está pasando (Principio 1)" },
+          { palabra: "REAL", pista: "Los diseños deben parecerse al mundo que conocemos (Principio 2)" },
+          { palabra: "CONTROL", pista: "El usuario debe poder corregir sus errores (Principio 3)" },
+          { palabra: "CONSISTENCIA", pista: "Las cosas parecidas deben funcionar igual (Principio 4)" },
+          { palabra: "PREVENCION", pista: "Es mejor evitar errores antes de que ocurran (Principio 5)" },
+          { palabra: "RECONOCER", pista: "Es mejor ver opciones que recordarlas (Principio 6)" },
+          { palabra: "ATAJOS", pista: "Ayudan a los usuarios expertos a trabajar más rápido (Principio 7)" },
+          { palabra: "SIMPLE", pista: "Los diseños no deben tener cosas innecesarias (Principio 8)" },
+          { palabra: "AYUDA", pista: "Los mensajes de error deben ser claros (Principio 9)" },
+          { palabra: "MANUAL", pista: "Instrucciones que nos ayudan a usar algo (Principio 10)" }
+        ];
+        
+        let palabraActual;
+        let palabraOculta = [];
+        let intentosRestantes = 6;
+        let letrasUsadas = [];
+        let juegoTerminado = false;
+        
+        const canvas = document.getElementById('hangman-canvas');
+        const ctx = canvas.getContext('2d');
+        const wordElement = document.getElementById('hangman-word');
+        const lettersElement = document.getElementById('hangman-letters');
+        const messageElement = document.getElementById('hangman-message');
+        const hintElement = document.getElementById('hangman-hint-text');
+        const restartButton = document.getElementById('hangman-restart');
+        
+        // Inicializar el juego
+        function iniciarJuego() {
+          // Seleccionar palabra aleatoria
+          const indiceAleatorio = Math.floor(Math.random() * palabras.length);
+          palabraActual = palabras[indiceAleatorio].palabra;
+          hintElement.textContent = palabras[indiceAleatorio].pista;
+          
+          // Reiniciar variables
+          palabraOculta = Array(palabraActual.length).fill('_');
+          intentosRestantes = 6;
+          letrasUsadas = [];
+          juegoTerminado = false;
+          
+          // Actualizar interfaz
+          actualizarPalabraOculta();
+          crearBotonesLetras();
+          dibujarAhorcado();
+          
+          messageElement.textContent = '¡Adivina la palabra!';
+          restartButton.style.display = 'none';
+        }
+        
+        // Actualizar la palabra oculta en la interfaz
+        function actualizarPalabraOculta() {
+          wordElement.innerHTML = '';
+          palabraOculta.forEach(letra => {
+            const letraElement = document.createElement('div');
+            letraElement.className = 'hangman-letter';
+            letraElement.textContent = letra;
+            wordElement.appendChild(letraElement);
+          });
+        }
+        
+        // Crear botones para cada letra del alfabeto
+        function crearBotonesLetras() {
+          lettersElement.innerHTML = '';
+          for (let i = 0; i < 26; i++) {
+            const letra = String.fromCharCode(65 + i);
+            const boton = document.createElement('button');
+            boton.className = 'letter-button';
+            boton.textContent = letra;
+            boton.addEventListener('click', () => adivinarLetra(letra));
+            lettersElement.appendChild(boton);
+          }
+        }
+        
+        // Procesar intento de adivinar letra
+        function adivinarLetra(letra) {
+          if (juegoTerminado || letrasUsadas.includes(letra)) return;
+          
+          letrasUsadas.push(letra);
+          
+          // Marcar botón como usado
+          const botones = document.querySelectorAll('.letter-button');
+          botones.forEach(boton => {
+            if (boton.textContent === letra) {
+              boton.classList.add('used');
+            }
+          });
+          
+          // Verificar si la letra está en la palabra
+          if (palabraActual.includes(letra)) {
+            // Actualizar palabra oculta
+            for (let i = 0; i < palabraActual.length; i++) {
+              if (palabraActual[i] === letra) {
+                palabraOculta[i] = letra;
+              }
+            }
+            actualizarPalabraOculta();
+            
+            // Marcar botón como correcto
+            botones.forEach(boton => {
+              if (boton.textContent === letra) {
+                boton.classList.add('correct');
+              }
+            });
+            
+            // Verificar si ganó
+            if (!palabraOculta.includes('_')) {
+              messageElement.textContent = '¡Felicidades! ¡Has ganado! 🎉';
+              messageElement.style.color = '#4CAF50';
+              juegoTerminado = true;
+              restartButton.style.display = 'block';
+            }
+          } else {
+            // Restar intento
+            intentosRestantes--;
+            
+            // Marcar botón como incorrecto
+            botones.forEach(boton => {
+              if (boton.textContent === letra) {
+                boton.classList.add('wrong');
+              }
+            });
+            
+            // Actualizar dibujo
+            dibujarAhorcado();
+            
+            // Verificar si perdió
+            if (intentosRestantes === 0) {
+              messageElement.textContent = `¡Oh no! La palabra era: ${palabraActual}`;
+              messageElement.style.color = '#F44336';
+              juegoTerminado = true;
+              restartButton.style.display = 'block';
+              
+              // Mostrar palabra completa
+              palabraOculta = palabraActual.split('');
+              actualizarPalabraOculta();
+            }
+          }
+        }
+        
+        // Dibujar el ahorcado según los intentos restantes
+        function dibujarAhorcado() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.lineWidth = 4;
+          ctx.strokeStyle = '#5D4037';
+          ctx.beginPath();
+          
+          // Base
+          ctx.moveTo(20, 180);
+          ctx.lineTo(180, 180);
+          
+          // Poste
+          if (intentosRestantes < 6) {
+            ctx.moveTo(60, 180);
+            ctx.lineTo(60, 20);
+          }
+          
+          // Travesaño
+          if (intentosRestantes < 5) {
+            ctx.moveTo(60, 20);
+            ctx.lineTo(120, 20);
+          }
+          
+          // Cuerda
+          if (intentosRestantes < 4) {
+            ctx.moveTo(120, 20);
+            ctx.lineTo(120, 40);
+          }
+          
+          ctx.stroke();
+          
+          // Cabeza
+          if (intentosRestantes < 3) {
+            ctx.beginPath();
+            ctx.arc(120, 60, 20, 0, Math.PI * 2);
+            ctx.stroke();
+          }
+          
+          // Cuerpo
+          if (intentosRestantes < 2) {
+            ctx.beginPath();
+            ctx.moveTo(120, 80);
+            ctx.lineTo(120, 130);
+            ctx.stroke();
+          }
+          
+          // Brazos y piernas
+          if (intentosRestantes < 1) {
+            // Brazos
+            ctx.beginPath();
+            ctx.moveTo(120, 95);
+            ctx.lineTo(90, 110);
+            ctx.moveTo(120, 95);
+            ctx.lineTo(150, 110);
+            
+            // Piernas
+            ctx.moveTo(120, 130);
+            ctx.lineTo(100, 160);
+            ctx.moveTo(120, 130);
+            ctx.lineTo(140, 160);
+            ctx.stroke();
+          }
+        }
+        
+        // Evento para reiniciar el juego
+        restartButton.addEventListener('click', iniciarJuego);
+        
+        // Iniciar juego al cargar
+        iniciarJuego();
+      });
+    </script>
+    
+    <style>
+      .memory-game {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 18px;
+        max-width: 800px;
+        margin: 0 auto 20px auto;
+        padding: 10px;
+        background: linear-gradient(135deg, #e0f7fa 0%, #f1f8e9 100%);
+        border-radius: 18px;
+        box-shadow: 0 6px 24px rgba(56, 142, 60, 0.08);
+      }
+      .memory-card {
+        perspective: 700px;
+        height: 100px;
+        background: none;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        cursor: pointer;
+      }
+      .memory-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.6s cubic-bezier(.4,2,.6,1);
+        transform-style: preserve-3d;
+      }
+      .memory-card.flipped .memory-card-inner,
+      .memory-card.matched .memory-card-inner {
+        transform: rotateY(180deg);
+      }
+      .memory-card-front, .memory-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+        font-weight: bold;
+        backface-visibility: hidden;
+        box-shadow: 0 2px 8px rgba(67,160,71,0.08);
+        text-align: center;
+        padding: 8px;
+        transition: background 0.4s, color 0.4s;
+      }
+      .memory-card-front {
+        background: linear-gradient(135deg, #43a047 60%, #81c784 100%);
+        color: #fff;
+        border: 2.5px solid #43a047;
+        transform: rotateY(180deg);
+        box-shadow: 0 4px 16px rgba(67,160,71,0.18);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .memory-card-back {
+        background: #fff;
+        color: #43a047;
+        border: 2.5px solid #43a047;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+      }
+      .memory-card.matched .memory-card-front {
+        border-color: #1976d2;
+        box-shadow: 0 0 18px #1976d244;
+        animation: matchPulse 0.7s;
+      }
+      @keyframes matchPulse {
+        0% { box-shadow: 0 0 0 #1976d244; }
+        60% { box-shadow: 0 0 32px #1976d2cc; }
+        100% { box-shadow: 0 0 18px #1976d244; }
+      }
+      .reset-button {
+        display: block;
+        margin: 20px auto 0 auto;
+        padding: 13px 30px;
+        background-color: #ff6b6b;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s, transform 0.2s;
+        box-shadow: 0 2px 8px rgba(255,107,107,0.08);
+      }
+      .reset-button:hover {
+        background-color: #e74c3c;
+        transform: scale(1.05);
+      }
+    </style>
+    <script>
+      // 10 principios de Nielsen y conceptos clave para el juego de memoria
+      const memoryPairs = [
+        {id: 1, text: "Visibilidad del estado del sistema"},
+        {id: 1, text: "El sistema informa siempre qué está pasando"},
+        {id: 2, text: "Relación con el mundo real"},
+        {id: 2, text: "Usa símbolos y palabras familiares"},
+        {id: 3, text: "Control y libertad del usuario"},
+        {id: 3, text: "Permite deshacer y rehacer acciones"},
+        {id: 4, text: "Consistencia y estándares"},
+        {id: 4, text: "Sigue patrones conocidos"},
+        {id: 5, text: "Prevención de errores"},
+        {id: 5, text: "Evita que ocurran errores"},
+        {id: 6, text: "Reconocer mejor que recordar"},
+        {id: 6, text: "Es mejor ver opciones que recordarlas"},
+        {id: 7, text: "Flexibilidad y eficiencia de uso"},
+        {id: 7, text: "Atajos para usuarios expertos"},
+        {id: 8, text: "Estética y diseño minimalista"},
+        {id: 8, text: "Solo lo necesario, sin cosas extra"},
+        {id: 9, text: "Ayuda con los errores"},
+        {id: 9, text: "Mensajes claros para solucionar problemas"},
+        {id: 10, text: "Ayuda y documentación"},
+        {id: 10, text: "Manual o instrucciones disponibles"}
+      ];
+      let memoryCards = [];
+      let flippedCards = [];
+      let matchedCount = 0;
+      function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+      }
+      function initMemoryGame() {
+        const game = document.getElementById('memory-game');
+        const message = document.getElementById('memory-message');
+        memoryCards = [...memoryPairs];
+        shuffle(memoryCards);
+        game.innerHTML = '';
+        flippedCards = [];
+        matchedCount = 0;
+        message.textContent = '';
+        memoryCards.forEach((pair, idx) => {
+          const card = document.createElement('div');
+          card.className = 'memory-card';
+          card.dataset.id = pair.id;
+          card.dataset.index = idx;
+          card.innerHTML = `
+            <div class="memory-card-inner">
+              <div class="memory-card-front">${pair.text}</div>
+              <div class="memory-card-back">?</div>
+            </div>
+          `;
+          card.addEventListener('click', () => flipCard(card));
+          game.appendChild(card);
+        });
+      }
+      function flipCard(card) {
+        if (card.classList.contains('flipped') || card.classList.contains('matched') || flippedCards.length === 2) return;
+        card.classList.add('flipped');
+        flippedCards.push(card);
+        if (flippedCards.length === 2) {
+          const [card1, card2] = flippedCards;
+          if (card1.dataset.id === card2.dataset.id && card1 !== card2) {
+            setTimeout(() => {
+              card1.classList.add('matched');
+              card2.classList.add('matched');
+              flippedCards = [];
+              matchedCount++;
+              if (matchedCount === memoryPairs.length / 2) {
+                document.getElementById('memory-message').textContent = '¡Felicidades! Has emparejado todos los principios 🎉';
+              }
+            }, 600);
+          } else {
+            setTimeout(() => {
+              card1.classList.remove('flipped');
+              card2.classList.remove('flipped');
+              flippedCards = [];
+            }, 900);
+          }
+        }
+      }
+      // Inicializar el juego al cargar la página
+      document.addEventListener('DOMContentLoaded', initMemoryGame);
+    </script>
+   
+    <div class="celebration" id="celebration"></div>
+   
+  </div>
+ 
   <style>
     body {
       font-family: 'Comic Sans MS', cursive, sans-serif;
@@ -296,14 +950,14 @@
       margin: 0;
       padding: 20px;
     }
-    
+   
     .container {
       max-width: 1200px;
       margin: 0 auto;
       position: relative;
       padding: 20px;
     }
-    
+   
     .header {
       background-color: #4CAF50;
       color: white;
@@ -313,12 +967,12 @@
       margin-bottom: 30px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
-    
+   
     .header h1 {
       font-size: 2.5rem;
       margin-bottom: 10px;
     }
-    
+   
     .section {
       background-color: white;
       border-radius: 15px;
@@ -326,43 +980,43 @@
       margin-bottom: 30px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-    
+   
     .section h2 {
       color: #4CAF50;
       font-size: 1.8rem;
       margin-bottom: 20px;
       text-align: center;
     }
-    
+   
     .intro-image-container {
       text-align: center;
       margin: 20px 0;
     }
-    
+   
     .intro-image {
       max-width: 100%;
       height: auto;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
-    
+   
     .pulse {
       animation: pulse 2s infinite;
     }
-    
+   
     @keyframes pulse {
       0% { transform: scale(1); }
       50% { transform: scale(1.05); }
       100% { transform: scale(1); }
     }
-    
+   
     .principles-container {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 20px;
       margin-top: 20px;
     }
-    
+   
     .principle-card {
       background-color: white;
       border-radius: 12px;
@@ -371,12 +1025,12 @@
       transition: transform 0.3s ease;
       border: 2px solid #e2e8f0;
     }
-    
+   
     .principle-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     }
-    
+   
     .card-header {
       background-color: #FF9800;
       color: white;
@@ -385,18 +1039,18 @@
       font-weight: bold;
       font-size: 1.2rem;
     }
-    
+   
     .card-content {
       padding: 15px;
     }
-    
+   
     .principle-title {
       color: #2d3748;
       font-size: 1.3rem;
       margin-bottom: 10px;
       text-align: center;
     }
-    
+   
     .principle-gif {
       width: 100%;
       height: 150px;
@@ -405,26 +1059,26 @@
       margin-bottom: 15px;
       border: 2px dashed #FF9800;
     }
-    
+   
     .game-title {
       color: #4CAF50;
       font-size: 1.1rem;
       margin: 15px 0 5px;
     }
-    
+   
     .game-instructions {
       font-size: 0.95rem;
       color: #4a5568;
       margin-bottom: 10px;
     }
-    
+   
     .game-interaction {
       background-color: #f8f9fa;
       padding: 10px;
       border-radius: 8px;
       margin-top: 10px;
     }
-    
+   
     .decoration {
       position: absolute;
       z-index: -1;
@@ -432,37 +1086,37 @@
       opacity: 0.3;
       animation: float 6s ease-in-out infinite;
     }
-    
+   
     .deco-1 {
       top: 10%;
       left: 5%;
       animation-delay: 0s;
     }
-    
+   
     .deco-2 {
       top: 30%;
       right: 5%;
       animation-delay: 1.5s;
     }
-    
+   
     .deco-3 {
       bottom: 40%;
       left: 8%;
       animation-delay: 3s;
     }
-    
+   
     .deco-4 {
       bottom: 20%;
       right: 8%;
       animation-delay: 4.5s;
     }
-    
+   
     @keyframes float {
       0% { transform: translateY(0) rotate(0deg); }
       50% { transform: translateY(-15px) rotate(5deg); }
       100% { transform: translateY(0) rotate(0deg); }
     }
-    
+   
     /* Estilos para el quiz */
     .quiz-container {
       background-color: white;
@@ -471,21 +1125,21 @@
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
       margin: 20px 0;
     }
-    
+   
     .quiz-question {
       font-size: 1.3rem;
       font-weight: 600;
       margin-bottom: 15px;
       color: #2e3192;
     }
-    
+   
     .quiz-options {
       display: grid;
       grid-template-columns: 1fr;
       gap: 10px;
       margin-bottom: 15px;
     }
-    
+   
     .quiz-option {
       background: white;
       border: 2px solid #ddd;
@@ -495,24 +1149,24 @@
       cursor: pointer;
       transition: all 0.3s ease;
     }
-    
+   
     .quiz-option:hover {
       background: #f5f5f5;
       border-color: #5a67d8;
     }
-    
+   
     .quiz-option.correct {
       background: #4CAF50;
       color: white;
       border-color: #4CAF50;
     }
-    
+   
     .quiz-option.incorrect {
       background: #F44336;
       color: white;
       border-color: #F44336;
     }
-    
+   
     .quiz-feedback {
       display: none;
       padding: 10px;
@@ -520,7 +1174,7 @@
       margin-top: 10px;
       text-align: center;
     }
-    
+   
     .progress-container {
       width: 100%;
       background-color: #e0e0e0;
@@ -528,7 +1182,7 @@
       margin: 15px 0;
       overflow: hidden;
     }
-    
+   
     .progress-bar {
       height: 20px;
       background-color: #4CAF50;
@@ -538,7 +1192,7 @@
       transition: width 0.5s ease;
       width: 0%;
     }
-    
+   
     .score-display {
       text-align: center;
       font-size: 1.2rem;
@@ -546,7 +1200,7 @@
       color: #2d3748;
       font-weight: bold;
     }
-    
+   
     /* Estilos para el juego de emparejar */
     .match-container {
       background-color: white;
@@ -555,25 +1209,25 @@
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
       margin: 20px 0;
     }
-    
+   
     .match-game {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
       margin-top: 20px;
     }
-    
+   
     .match-column {
       flex: 1;
       min-width: 250px;
     }
-    
+   
     .match-column h3 {
       text-align: center;
       color: #4CAF50;
       margin-bottom: 15px;
     }
-    
+   
     .match-drop-zone {
       min-height: 200px;
       border: 2px dashed #ccc;
@@ -581,12 +1235,12 @@
       padding: 15px;
       background-color: #f9f9f9;
     }
-    
+   
     .match-drop-zone.highlight {
       background-color: #e6f7ff;
       border-color: #1890ff;
     }
-    
+   
     .match-item {
       padding: 10px;
       margin: 10px 0;
@@ -596,25 +1250,25 @@
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       transition: all 0.3s ease;
     }
-    
+   
     .match-item.problem {
       border-left: 4px solid #ff9800;
     }
-    
+   
     .match-item.principle {
       border-left: 4px solid #4CAF50;
     }
-    
+   
     .match-item.dragging {
       opacity: 0.5;
     }
-    
+   
     .match-item.matched {
       background-color: #e6ffed;
       border-color: #52c41a;
       box-shadow: 0 2px 8px rgba(82, 196, 26, 0.2);
     }
-    
+   
     /* Estilos para la celebración */
     .celebration {
       position: fixed;
@@ -626,7 +1280,7 @@
       z-index: 1000;
       display: none;
     }
-    
+   
     .confetti {
       position: absolute;
       width: 10px;
@@ -634,12 +1288,12 @@
       background-color: #f00;
       animation: fall linear forwards;
     }
-    
+   
     @keyframes fall {
       0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
       100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
     }
-    
+   
     .reset-button {
       display: block;
       margin: 20px auto;
@@ -652,12 +1306,12 @@
       cursor: pointer;
       transition: background-color 0.3s;
     }
-    
+   
     .reset-button:hover {
       background-color: #e74c3c;
     }
   </style>
-  
+ 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       // Variables para el seguimiento de puntuaciones
@@ -665,23 +1319,23 @@
       let matchScore = 0;
       const quizTotal = document.querySelectorAll('.quiz-item').length;
       const matchTotal = document.querySelectorAll('.match-item.problem').length;
-      
+     
       document.getElementById('quiz-total').textContent = quizTotal;
       document.getElementById('match-total').textContent = matchTotal;
-      
+     
       // Funcionalidad del cuestionario
       const quizOptions = document.querySelectorAll('.quiz-option');
-      
+     
       quizOptions.forEach(option => {
         option.addEventListener('click', function() {
           // Obtener el grupo de opciones al que pertenece esta opción
           const parentQuizItem = this.closest('.quiz-item');
           const options = parentQuizItem.querySelectorAll('.quiz-option');
           const feedback = parentQuizItem.querySelector('.quiz-feedback');
-          
+         
           // Deshabilitar todas las opciones en este grupo
           options.forEach(opt => opt.style.pointerEvents = 'none');
-          
+         
           if (this.dataset.correct === 'true') {
             this.classList.add('correct');
             feedback.textContent = '¡Correcto! ¡Muy bien!';
@@ -689,7 +1343,7 @@
             feedback.style.color = '#2E7D32';
             quizScore++;
             document.getElementById('quiz-score').textContent = quizScore;
-            
+           
             // Confeti para respuesta correcta
             createConfetti(10);
           } else {
@@ -697,7 +1351,7 @@
             feedback.textContent = 'Incorrecto. La respuesta correcta está marcada en verde.';
             feedback.style.backgroundColor = '#FFCDD2';
             feedback.style.color = '#C62828';
-            
+           
             // Resaltar la respuesta correcta
             options.forEach(opt => {
               if (opt.dataset.correct === 'true') {
@@ -705,14 +1359,14 @@
               }
             });
           }
-          
+         
           feedback.style.display = 'block';
-          
+         
           // Actualizar la barra de progreso
           updateQuizProgress();
         });
       });
-      
+     
 // Función para actualizar la barra de progreso del juego de emparejamiento
 function updateMatchProgress() {
     const progressPercentage = Math.round((matchScore / matchTotal) * 100);
@@ -725,7 +1379,7 @@ function updateMatchProgress() {
         progressBar.style.backgroundColor = '#4CAF50';
     }
 }
-
+ 
 // Función para crear confeti
 function createConfetti(count) {
     const celebration = document.getElementById('celebration');
@@ -749,7 +1403,7 @@ function createConfetti(count) {
         celebration.style.display = 'none';
     }, 5000);
 }
-
+ 
 // Botón para reiniciar los juegos
 document.getElementById('reset-games').addEventListener('click', function() {
     // Reiniciar cuestionario
@@ -798,6 +1452,6 @@ document.getElementById('reset-games').addEventListener('click', function() {
 });
 });
 </script>
-
-
+ 
+ 
 {% endblock %}
